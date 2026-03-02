@@ -1,0 +1,483 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Vedansh Education & Technology – Full Educational App Frontend",
+  "requirements": [
+    {
+      "id": "REQ-2",
+      "summary": "Build animated splash screen with Vedansh logo, brand name, and tagline",
+      "acceptanceCriteria": [
+        "Splash screen displays for exactly 3 seconds",
+        "Logo animates in with scale/fade effect",
+        "Tagline appears with staggered animation",
+        "Automatically transitions to landing page after 3 seconds"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/SplashScreen.tsx",
+          "operation": "create",
+          "description": "Create animated splash screen component that displays the generated Vedansh logo from frontend/public/assets/generated/vedansh-logo.dim_256x256.png, brand name 'Vedansh Education & Technology', tagline 'Seekho, Badho, Chamko', and background image from frontend/public/assets/generated/splash-bg.dim_1080x1920.png. Implement entrance animations using Framer Motion (scale/fade for logo, staggered text reveal for tagline). Auto-navigate to landing page after 3 seconds using useNavigate and useEffect."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for SplashScreen at path '/' and make it the initial landing route. Ensure Landing page is accessible at '/home'."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Build Landing/Home page with hero section, stats, feature highlights, and Founder section",
+      "acceptanceCriteria": [
+        "Hero headline 'Seekho, Badho, Chamko' is prominently displayed",
+        "All three stat counters animate on scroll",
+        "NEP 2020 badge is visible",
+        "Founder section shows Mrityunjay Pandey, BTech CSE, Founder & CEO",
+        "Feature highlights grid shows at least 6 cards"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "create",
+          "description": "Create Landing page with hero section featuring 'Seekho, Badho, Chamko' headline, sub-headline 'India's #1 AI-Powered Free Education Platform', sub-slogan '100% Free Quality Education Forever | Powered by AI'. Include NEP 2020 badge from frontend/public/assets/generated/nep2020-badge.dim_200x80.png. Add animated stats section (50+ Exams, Class 1-BTech, 1Cr+ Students) using counter animation on scroll. Create feature highlights grid with 6+ cards covering Study Material, Practice Tests, AI Tools, Wellness Hub, Government Resources, and Placement Prep. Include Founder section with avatar from frontend/public/assets/generated/founder-avatar.dim_256x256.png, name 'Mrityunjay Pandey', title 'BTech CSE', and designation 'Founder & CEO'. Apply gradient backgrounds and glassmorphism effects per brand design system."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for LandingPage at path '/home'."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Build OTP-based authentication page with mobile input and animated OTP boxes",
+      "acceptanceCriteria": [
+        "Mobile number input accepts 10-digit numbers",
+        "6 OTP boxes auto-advance focus on digit entry",
+        "Resend button is disabled during 30-second countdown",
+        "Security badge is visible",
+        "Any valid 6-digit entry routes to dashboard"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AuthPage.tsx",
+          "operation": "create",
+          "description": "Create authentication page with mobile number input field (validates 10 digits), 6 animated OTP digit boxes with auto-focus behavior, 'Fully Secure | End-to-End Encrypted' badge, resend OTP button with 30-second countdown timer. Use gradient background. Implement mock OTP verification that accepts any 6-digit code and navigates to Dashboard using useNavigate. Use the authorization component's useInternetIdentity hook to trigger login after mock phone verification succeeds. Store phone number in localStorage for profile linking."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for AuthPage at path '/auth'."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Build post-login Dashboard with welcome message, quick access cards, streak counter, and progress bars",
+      "acceptanceCriteria": [
+        "Welcome message shows student name",
+        "4 quick access cards navigate to correct pages",
+        "Streak counter displays current streak with fire icon",
+        "Subject progress bars render with percentage values",
+        "Notification bell shows badge count"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Dashboard.tsx",
+          "operation": "create",
+          "description": "Create Dashboard page with welcome message using student name from getCallerUserProfile. Add 4 quick access cards for Study (Academic Section), Practice (Quizzes), Wellness (Wellness Hub), and AI Tools (AI Tools Hub) that navigate to respective pages. Display daily streak counter with fire icon (fetch from backend getStudent using phone from profile). Render subject progress bars (Math, Science, English, Social Studies) with animated percentage values. Add upcoming quizzes section with sample data. Include NEP 2020 badge from frontend/public/assets/generated/nep2020-badge.dim_200x80.png and notification bell icon with mock unread badge count. Use the authorization component to ensure user is authenticated before displaying dashboard content. Use glassmorphism card styling."
+        },
+        {
+          "path": "frontend/src/hooks/useGetCallerUserProfile.ts",
+          "operation": "create",
+          "description": "Create custom hook that wraps useQuery to fetch current user profile via actor.getCallerUserProfile(). Handle actor loading state properly to prevent profile setup modal flash. Return isLoading that includes actorFetching state and isFetched that ensures actor is ready. Follow the authorization component's usage pattern for preventing profile setup modal flash."
+        },
+        {
+          "path": "frontend/src/components/ProfileSetupModal.tsx",
+          "operation": "create",
+          "description": "Create modal component for first-time user profile setup. Show name input and phone number input fields. On submit, call saveCallerUserProfile from backend with UserProfile containing name and phoneNumber, then call addStudent to initialize student data. Only show when user is authenticated, profile is fetched, and userProfile is null. Use authorization component's profile setup pattern."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for Dashboard at path '/dashboard'. Wrap Dashboard and all authenticated routes in a ProtectedRoute component that checks authentication status using the authorization component's useInternetIdentity hook."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Build Academic Section page with class selector, subject cards, and study resources",
+      "acceptanceCriteria": [
+        "Class selector shows all classes 1-12 plus BTech branches",
+        "Selecting a class updates visible subjects",
+        "Government Approved badges appear on NCERT Books and Video Lectures sections",
+        "PDF Download button is visible on Notes cards",
+        "Subject cards display relevant icons"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AcademicSection.tsx",
+          "operation": "create",
+          "description": "Create Academic Section page with class selector dropdown (Class 1-12 and BTech branches: CSE, ECE, ME, CE, EE, IT, Chemical, etc.). Render subject cards with icons based on selected class. Include NCERT Books section with 'Government Approved' stamp from frontend/public/assets/generated/govt-approved-stamp.dim_128x128.png. Add Study Material, Video Lectures (with Government Approved badge), and Notes sections. Display PDF Download button UI on Notes cards (non-functional per constraints). Use tabs or sections to organize resources. Apply glassmorphism styling to cards."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for AcademicSection at path '/academic'. Wire into bottom navigation bar Study tab."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Build Competitive Exam Prep page with 50+ exam listings in scrollable grid",
+      "acceptanceCriteria": [
+        "At least 50 exam entries are visible in the grid",
+        "Each card has three action buttons: Free Study Material, Mock Tests, Previous Year Papers",
+        "Exam categories are visually grouped or labeled",
+        "Page is fully scrollable on mobile"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/CompetitiveExams.tsx",
+          "operation": "create",
+          "description": "Create Competitive Exam Prep page with scrollable grid listing 50+ exams including JEE Mains+Advanced, NEET, UPSC (IAS/IPS/IFS), SSC (CGL, CHSL, MTS, GD), Banking (IBPS PO, SBI PO, RBI), Railway (RRB NTPC, Group D, ALP), Bihar Police, and 40+ additional exams. Each exam card shows Free Study Material, Mock Tests, and Previous Year Papers buttons. Group exams by category (Engineering, Medical, Civil Services, Banking, Railway, State Exams, etc.) with section headers. Ensure full mobile scrollability. Use glassmorphism card styling."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for CompetitiveExams at path '/competitive-exams'. Add navigation link from Dashboard or Academic Section."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Build BTech Placement Prep page with branch selector and preparation sections",
+      "acceptanceCriteria": [
+        "Branch selector filters visible content",
+        "DSA & Coding section has Government Approved badge",
+        "Resume Builder section is present with form UI",
+        "Company cards show at least 10 top companies",
+        "Placement stats animate on entry"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/PlacementPrep.tsx",
+          "operation": "create",
+          "description": "Create BTech Placement Prep page with branch selector dropdown (CSE, ECE, ME, CE, EE, IT, Chemical, etc.). Include DSA & Coding section with 'Government Approved' badge from frontend/public/assets/generated/govt-approved-stamp.dim_128x128.png. Add Aptitude & Reasoning, Technical Interview Prep sections. Create Resume Builder UI with form fields for personal info, education, skills, experience (non-functional save per constraints). Display company-wise preparation cards for 10+ top companies (Google, Microsoft, Amazon, TCS, Infosys, Wipro, Accenture, Cognizant, HCL, Tech Mahindra). Include placement statistics section with animated counters (average package, highest package, placement rate). Use Framer Motion for animations."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for PlacementPrep at path '/placement-prep'. Add navigation link from Dashboard or Academic Section."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Build AI Tools Hub with AI Maths Tutor and AI English Coach interfaces",
+      "acceptanceCriteria": [
+        "Two distinct tool tabs or sections are visible",
+        "Math input field accepts text and displays mock step-by-step solution on submit",
+        "Topic selector for math is functional",
+        "Microphone button is present in English Coach (UI only, no actual recording)",
+        "Vocabulary and grammar sections have sample content"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AIToolsHub.tsx",
+          "operation": "create",
+          "description": "Create AI Tools Hub page with two tabs/sections. (1) AI Maths Tutor: animated interface with math input field, mock math keyboard UI, topic selector dropdown (Algebra, Calculus, Statistics, Discrete Math, Geometry, Trigonometry), submit button that displays mock step-by-step solution panel with animated reveal. (2) AI English Coach: reading comprehension practice section with sample passage and questions, speaking practice UI with microphone button (UI only, no recording per constraints), vocabulary builder with word cards, grammar checker UI with sample text input and correction display, conversation practice section with sample dialogue. Use tabs to switch between tools. Apply brand colors and glassmorphism effects. All AI interactions are mock/UI-only per constraints."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for AIToolsHub at path '/ai-tools'. Wire into bottom navigation bar AI Tools tab."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Build Student Wellness & Success Hub with health tips, Pomodoro timer, motivational content, and study groups",
+      "acceptanceCriteria": [
+        "Pomodoro timer counts down from 25:00, switches to 5:00 break automatically",
+        "Start, pause, and reset controls work correctly",
+        "Daily motivational quote rotates each time the page loads",
+        "Achievement badges grid is visible with sample badges",
+        "Study Groups section shows join/create UI"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/WellnessHub.tsx",
+          "operation": "create",
+          "description": "Create Student Wellness & Success Hub page with four card sections. (1) Health & Wellness: mental health tips list, meditation timer UI with duration selector and start/stop controls, eye strain alert reminders, posture reminder tips. (2) Time Management: fully functional Pomodoro timer (25-minute study / 5-minute break cycles) with countdown display, start/pause/reset buttons, automatic cycle switching, and notification on completion; study schedule planner UI with time slots; daily goals checklist with add/remove/check functionality. (3) Motivational Hub: daily rotating quote that changes on page load, success stories carousel, achievement badges grid displaying sample badges. (4) Study Groups: join/create group UI with form, subject-wise community cards (Math, Science, English, etc.), discussion forum preview with sample posts. Use glassmorphism card styling and brand colors."
+        },
+        {
+          "path": "frontend/src/hooks/usePomodoroTimer.ts",
+          "operation": "create",
+          "description": "Create custom hook for Pomodoro timer logic. Manage state for time remaining, isActive, isBreak, cycle count. Implement countdown logic using useEffect and setInterval. Handle start, pause, reset, and automatic cycle switching from 25-minute study to 5-minute break. Return timer state and control functions."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for WellnessHub at path '/wellness'. Wire into bottom navigation bar Wellness tab."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Build Government Resources page with jobs, scholarships, and schemes sections",
+      "acceptanceCriteria": [
+        "Three distinct tabs or sections for Jobs, Scholarships, Schemes",
+        "Each card has an official source badge",
+        "At least 5 sample entries per section",
+        "View Details button is present on every card"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/GovernmentResources.tsx",
+          "operation": "create",
+          "description": "Create Government Resources page with three tabs/sections: Government Jobs (categorized by sector: Banking, Railway, Police, Civil Services, Teaching, etc.), Scholarships (NSP, state scholarships, minority scholarships, merit scholarships), Government Schemes (PM Scholarship, PMKVY, Digital India, etc.). Each entry card displays job/scholarship/scheme title, brief description, eligibility, 'Official Source' badge, and 'View Details' button (opens modal or navigates to detail view). Populate with at least 5 sample entries per section. Use tabs component for navigation between sections. Apply glassmorphism card styling."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for GovernmentResources at path '/government-resources'. Add navigation link from Dashboard or header."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Build NCERT Library page with class selector, book cards, and search functionality",
+      "acceptanceCriteria": [
+        "All classes 1-12 are selectable",
+        "Book cards show subject name, class, and Government Approved stamp",
+        "Read Online and Download PDF buttons are visible",
+        "Search bar filters results in real time"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/NCERTLibrary.tsx",
+          "operation": "create",
+          "description": "Create NCERT Library page with class selector dropdown (Class 1-12). Render subject book cards for selected class with cover image placeholders, subject name, class label, 'Government Approved' stamp from frontend/public/assets/generated/govt-approved-stamp.dim_128x128.png, 'Read Online' and 'Download PDF' action buttons (UI only, non-functional per constraints). Include search bar at top that filters visible books by class or subject name in real time. Populate with sample data covering all major subjects per class (Math, Science, Social Studies, English, Hindi, Sanskrit for applicable classes). Use grid layout with glassmorphism card styling."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for NCERTLibrary at path '/ncert-library'. Add navigation link from Academic Section or Dashboard."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Build Interactive Quizzes page with subject selection, timed mode, leaderboard, and review",
+      "acceptanceCriteria": [
+        "Subject selector shows at least 6 subjects",
+        "Timer counts down per question",
+        "Confetti animation triggers on quiz completion",
+        "Score is saved to backend via saveQuizScore",
+        "Leaderboard fetches from backend getLeaderboard",
+        "Review mode shows correct answers"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/InteractiveQuizzes.tsx",
+          "operation": "create",
+          "description": "Create Interactive Quizzes page with subject selector dropdown (Math, Science, English, Social Studies, Computer Science, General Knowledge). Display timed quiz mode with 30-second countdown timer per question using countdown component. On quiz completion, trigger confetti animation using react-confetti or canvas-confetti library. Display score and save to backend via saveQuizScore call using phone number from user profile. Include leaderboard tab that fetches top scores from backend getLeaderboard and displays in ranked list. Add review answers screen showing questions, user answers, correct answers, and explanations. Use sample quiz data with multiple-choice questions. Apply glassmorphism styling and smooth transitions."
+        },
+        {
+          "path": "frontend/src/hooks/useQuizTimer.ts",
+          "operation": "create",
+          "description": "Create custom hook for quiz countdown timer logic. Manage state for time remaining per question, handle countdown with useEffect and setInterval, auto-advance to next question or end quiz when time expires. Return timer state and control functions."
+        },
+        {
+          "path": "frontend/src/hooks/useLeaderboard.ts",
+          "operation": "create",
+          "description": "Create custom hook that wraps useQuery to fetch leaderboard data from backend getLeaderboard. Handle loading and error states. Return leaderboard entries array with student names, scores, and rankings."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for InteractiveQuizzes at path '/quizzes'. Wire into Dashboard Practice quick access card."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Build Education Tools page for BTech with branch-specific tool UIs",
+      "acceptanceCriteria": [
+        "Branch tabs switch visible tool content",
+        "Code editor textarea is visible for CSE",
+        "Government Approved badge appears on all tools",
+        "Placeholder visuals present for circuit simulator and CAD viewer"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/EducationTools.tsx",
+          "operation": "create",
+          "description": "Create Education Tools page (BTech) with branch selector tabs (CSE, ECE, ME, CE, EE, IT, Chemical). CSE tab: code editor UI with syntax-highlighted textarea using react-simple-code-editor or similar, language selector dropdown (Python, Java, C++, JavaScript), run button (UI only, displays mock output), algorithm visualizer mockup with step-by-step animation placeholders. ECE tab: circuit simulator UI mockup with component palette, canvas area, and simulate button. ME tab: CAD viewer UI mockup with 3D viewport placeholder, part list, and controls. Display 'Government Approved' badge from frontend/public/assets/generated/govt-approved-stamp.dim_128x128.png on all tool sections. Use tabs component for branch switching. Apply glassmorphism styling."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for EducationTools at path '/education-tools'. Add navigation link from Placement Prep or Academic Section."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Build About page with story, mission, vision, founder profile, and commitment banner",
+      "acceptanceCriteria": [
+        "Mission and Vision sections are clearly labeled",
+        "Founder card displays name, title, and role",
+        "NEP 2020 section explains compliance",
+        "100% Free Forever banner is prominent"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "create",
+          "description": "Create About page with sections for Vedansh Education & Technology story (origin, goals, impact). Include Mission section with 'Free Quality Education for Every Indian' statement. Add Vision section with 'Empowering Bharat through Technology' statement. Display Founder profile card with avatar from frontend/public/assets/generated/founder-avatar.dim_256x256.png, name 'Mrityunjay Pandey', title 'BTech CSE', and designation 'Founder & CEO'. Include NEP 2020 compliance details section explaining alignment with National Education Policy 2020 standards and framework. Add prominent '100% Free Forever' commitment banner at top or bottom. Use glassmorphism card styling and gradient backgrounds."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for AboutPage at path '/about'. Add navigation link from header or footer."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Implement fixed bottom navigation bar with 5 tabs and active highlighting",
+      "acceptanceCriteria": [
+        "Bottom nav is fixed to viewport bottom on all authenticated pages",
+        "Active tab shows orange highlight",
+        "Tapping each tab navigates to the correct page",
+        "Nav is fully responsive on mobile"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/BottomNavBar.tsx",
+          "operation": "create",
+          "description": "Create fixed bottom navigation bar component with 5 tabs: Home (Dashboard), Study (Academic Section), AI Tools (AI Tools Hub), Wellness (Wellness Hub), Profile (Profile page TBD or user menu). Use Deep Navy (#0A1628) background and Vibrant Orange (#FF6B00) active indicator. Highlight active tab based on current route using useLocation from react-router-dom. Each tab has icon and label. Position fixed to bottom with z-index to stay on top. Fully responsive on mobile with touch-friendly tap targets."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create Layout component that wraps authenticated pages and includes BottomNavBar. Conditionally render BottomNavBar only on authenticated routes (not on splash, landing, auth pages). Use Outlet from react-router-dom for nested route rendering."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap authenticated routes (Dashboard, Academic Section, AI Tools Hub, Wellness Hub, Profile) with Layout component to include BottomNavBar. Ensure splash, landing, auth, and public pages do not show bottom nav."
+        }
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "summary": "Implement dark/light mode toggle with localStorage persistence",
+      "acceptanceCriteria": [
+        "Toggle button is visible in the header/navbar",
+        "Dark mode applies deep navy background globally",
+        "Light mode applies light gray background globally",
+        "Preference persists after page refresh via localStorage"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useTheme.ts",
+          "operation": "create",
+          "description": "Create custom hook for dark/light mode management. Use useState to track current theme (dark or light). Initialize from localStorage on mount. Provide toggleTheme function that switches mode, updates localStorage, and applies theme class to document root. Return current theme and toggle function."
+        },
+        {
+          "path": "frontend/src/components/ThemeToggle.tsx",
+          "operation": "create",
+          "description": "Create theme toggle button component that uses useTheme hook. Display sun/moon icon based on current theme. On click, call toggleTheme function. Style with brand colors and smooth transition animations."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "create",
+          "description": "Create header/navbar component with Vedansh logo from frontend/public/assets/generated/vedansh-logo.dim_256x256.png, app name, navigation links (Home, About, NCERT Library, Government Resources, Competitive Exams, etc.), ThemeToggle component, and Login/Logout button using the authorization component's LoginButton pattern. Use Deep Navy background and white text. Fixed to top with z-index."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add CSS custom properties for theme colors. Define :root variables for light mode colors (background: #F8F9FA, text: #0A1628). Define .dark class variables for dark mode colors (background: #0A1628, text: #FFFFFF). Apply color variables to body and main containers. Ensure smooth transitions on theme change."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Include Header component in app layout for all pages (except splash screen). Ensure theme is applied globally via useTheme hook at App component level."
+        }
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "summary": "Apply brand design system consistently with glassmorphism, animations, and branded footer",
+      "acceptanceCriteria": [
+        "All brand colors are used consistently per spec",
+        "Cards use glassmorphism/frosted glass styling",
+        "Page transitions animate smoothly",
+        "Loading skeletons appear before content loads",
+        "Toast notifications fire on key actions",
+        "Footer appears on all non-dashboard pages with correct branding text"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define brand color CSS custom properties: --color-primary: #0A1628 (Deep Navy), --color-secondary: #FF6B00 (Vibrant Orange), --color-accent: #FFD700 (Gold), --color-success: #00C851. Add glassmorphism utility classes for frosted glass effects (backdrop-filter: blur, semi-transparent backgrounds, border styling). Define gradient utility classes for hero sections and cards. Ensure all colors are applied consistently throughout the app."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with brand colors as named color classes (deepNavy, vibrantOrange, gold, successGreen). Add custom utilities for glassmorphism effects. Configure backdrop-blur and backdrop-filter plugins if needed. Ensure all brand colors are accessible via Tailwind utility classes (e.g., bg-deepNavy, text-vibrantOrange)."
+        },
+        {
+          "path": "frontend/src/components/LoadingSkeleton.tsx",
+          "operation": "create",
+          "description": "Create loading skeleton component with animated pulse effect. Accept variant prop for different skeleton types (card, text, avatar, list). Use brand colors for skeleton background and shimmer animation. Render placeholder content with appropriate dimensions."
+        },
+        {
+          "path": "frontend/src/components/Toast.tsx",
+          "operation": "create",
+          "description": "Create toast notification component using react-hot-toast or similar library. Style with brand colors (success: green, error: orange/red, info: deep navy). Position at top-right or bottom-center. Include icon, message, and auto-dismiss functionality. Export toast helper functions (toast.success, toast.error, toast.info)."
+        },
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "create",
+          "description": "Create branded footer component with text 'Vedansh Education & Technology | Founded by Mrityunjay Pandey | BTech CSE | © 2024 All Rights Reserved | 100% Free Education Forever'. Include social media icons (placeholder links for Facebook, Twitter, LinkedIn, Instagram, YouTube). Display NEP 2020 badge from frontend/public/assets/generated/nep2020-badge.dim_200x80.png. Use Deep Navy background and white text. Render on all non-dashboard pages (landing, about, public pages)."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap all routes with Framer Motion AnimatePresence for smooth page transitions. Apply fade and slide animations on route changes. Include Footer component on public/non-dashboard routes (landing, about, NCERT library, government resources, competitive exams, etc.). Ensure footer does not appear on dashboard or authenticated app pages."
+        },
+        {
+          "path": "frontend/src/components/PageTransition.tsx",
+          "operation": "create",
+          "description": "Create page transition wrapper component using Framer Motion. Define entrance/exit animations (fade + slide). Accept children prop and wrap with motion.div. Export for use in route components to enable smooth transitions."
+        }
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "summary": "Render generated Vedansh logo in splash screen and navbar",
+      "acceptanceCriteria": [
+        "Logo image is displayed in the splash screen",
+        "Logo is displayed in the top navbar/header",
+        "Logo uses the stylized V with torch and circuit elements"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/SplashScreen.tsx",
+          "operation": "modify",
+          "description": "Ensure splash screen renders the generated Vedansh logo from frontend/public/assets/generated/vedansh-logo.dim_256x256.png as the central animated element with scale/fade entrance animation."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Ensure Header component renders the generated Vedansh logo from frontend/public/assets/generated/vedansh-logo.dim_256x256.png in the top-left corner as a clickable link to home/landing page. Logo should be sized appropriately for navbar (e.g., 40x40 or 48x48 px)."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-03-02T17:01:05.892Z",
+  "summary": "The diff implements a comprehensive educational app with most requirements addressed. The backend Motoko actor, frontend pages, and design system are all present. However, several specific acceptance criteria show partial or missing implementation: the updateStreak function sets a new streak rather than incrementing it; the Authentication page appears to be standalone (OTP-based) but Internet Identity login is also wired in the header, creating conflicting auth flows; the profile tab for the bottom nav routes to /dashboard instead of a dedicated profile page; and several pages are truncated making full verification impossible. Key missing items include: no dedicated Profile page, the bottom nav Profile tab links to /dashboard, Framer Motion page transitions and loading skeletons are only partially evidenced, and the student data model doesn't include progress per subject as specified.",
+  "missing_requirements": [
+    {
+      "id": "REQ-1",
+      "requirement": "updateStreak should increment the daily streak server-side. Student data should include progress per subject.",
+      "reason": "In backend/main.mo, updateStreak takes a newStreak parameter and sets it directly rather than incrementing server-side. Additionally, the Student type lacks a progress-per-subject field.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "requirement": "Bottom nav Profile tab must navigate to a correct Profile page.",
+      "reason": "In BottomNavBar.tsx, the Profile tab has 'to: /dashboard' instead of a dedicated profile route. No Profile page component is evidenced in the diff.",
+      "evidence": [
+        "frontend/src/components/BottomNavBar.tsx"
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "requirement": "Smooth Framer Motion page transitions must be applied across all pages.",
+      "reason": "No Framer Motion import or usage is evidenced in any of the shown files. The dependency and animation wrappers are absent from the visible diff.",
+      "evidence": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Layout.tsx"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "requirement": "Splash screen with animated logo, brand name, tagline for exactly 3 seconds with entrance animations.",
+      "reason": "SplashScreen.tsx is imported in App.tsx but no diff content for this file is shown as it was omitted from the diff summary due to limits. Cannot verify implementation.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "requirement": "At least 50 exam entries visible in the grid.",
+      "reason": "CompetitiveExams.tsx is truncated. The visible categories show approximately 37-40 exams. Cannot confirm 50+ total without the full file.",
+      "evidence": [
+        "frontend/src/pages/CompetitiveExams.tsx"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "requirement": "Student Wellness and Success Hub page with Pomodoro timer, health tips, motivational hub, and study groups.",
+      "reason": "WellnessHub page is imported in App.tsx but no diff content for WellnessHub.tsx is shown as it was omitted from the diff summary due to limits.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "requirement": "Government Resources page with three tabs and sample data.",
+      "reason": "GovernmentResources page is imported in App.tsx but no diff content for GovernmentResources.tsx is shown as it was omitted from the diff summary due to limits.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "requirement": "NCERT Library page with class selector, book cards, Government Approved stamp, Read Online and Download PDF buttons, and real-time search filter.",
+      "reason": "NCERTLibrary page is imported in App.tsx but no diff content for NCERTLibrary.tsx is shown as it was omitted from the diff summary due to limits.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "requirement": "Interactive Quizzes page with timed quiz, leaderboard from backend, confetti animation, and review mode.",
+      "reason": "InteractiveQuizzes page is imported in App.tsx but no diff content for InteractiveQuizzes.tsx is shown as it was omitted from the diff summary due to limits.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "requirement": "Education Tools page with branch tabs, code editor for CSE, circuit simulator for ECE, CAD viewer for ME, and Government Approved badges.",
+      "reason": "EducationTools page is imported in App.tsx but no diff content for EducationTools.tsx is shown as it was omitted from the diff summary due to limits.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "requirement": "BTech Placement Prep page with branch selector, DSA section, Resume Builder, company cards, and placement stats.",
+      "reason": "PlacementPrep page is imported in App.tsx but no diff content for PlacementPrep.tsx is shown as it was omitted from the diff summary due to limits.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Internet Identity (ICP) authentication integration including login/logout buttons in the Header, useInternetIdentity hook, useActor with identity-based actor creation, and ProfileSetupModal tied to Internet Identity.",
+      "reason": "The build request non-goals explicitly state 'Internet Identity / wallet authentication' should not be implemented. The diff extensively integrates Internet Identity via useInternetIdentity hook, AuthClient from @dfinity/auth-client, and ICP actor management.",
+      "evidence": [
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/components/ProfileSetupModal.tsx",
+        "frontend/src/main.tsx"
+      ]
+    },
+    {
+      "description": "Access control and authorization system (MixinAuthorization, AccessControl) integrated into the backend actor requiring users to have specific permissions to call getStudent, updateStreak, saveQuizScore, and other functions.",
+      "reason": "The build request does not mention any access control or authorization layer for the backend. The spec only asks for simple query and update functions. Adding permission checks may break the mock flow since anonymous callers would be rejected.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "UserProfile entity separate from Student entity, with saveCallerUserProfile and getCallerUserProfile functions tied to Principal identity.",
+      "reason": "The build request specifies only student data stored by phone number as identifier. A separate UserProfile keyed by Principal was not requested.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/components/ProfileSetupModal.tsx"
+      ]
+    },
+    {
+      "description": "caffeineAdminToken secret parameter used to initialize access control for the admin role.",
+      "reason": "No admin token, admin initialization, or access control secret was requested in the build spec.",
+      "evidence": [
+        "frontend/src/hooks/useActor.ts"
+      ]
+    }
+  ],
+  "confidence": 0.52,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/BottomNavBar.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/GovtApprovedBadge.tsx",
+    "frontend/src/components/Header.tsx",
+    "frontend/src/components/Layout.tsx",
+    "frontend/src/components/ProfileSetupModal.tsx",
+    "frontend/src/components/PublicLayout.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/AIToolsHub.tsx",
+    "frontend/src/pages/AboutPage.tsx",
+    "frontend/src/pages/AcademicSection.tsx",
+    "frontend/src/pages/AuthPage.tsx",
+    "frontend/src/pages/CompetitiveExams.tsx",
+    "frontend/src/pages/Dashboard.tsx",
+    "frontend/src/pages/EducationTools.tsx",
+    "frontend/src/pages/GovernmentResources.tsx",
+    "frontend/src/pages/InteractiveQuizzes.tsx",
+    "frontend/src/pages/LandingPage.tsx",
+    "frontend/src/pages/NCERTLibrary.tsx",
+    "frontend/src/pages/PlacementPrep.tsx",
+    "frontend/src/pages/SplashScreen.tsx",
+    "frontend/src/pages/WellnessHub.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

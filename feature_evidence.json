@@ -1,0 +1,370 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-build-an-animated-splash-screen-component-that-displays-the-vedansh-logo-stylized-v-with-torch-flame-and-circuit-pattern-the-brand-name-vedansh-education-technology-and-the-tagline-seekho-badho-chamko-for-3-seconds-with-entrance-animations-before-routing-to-the-landing-page",
+      "featureTitle": "Build an animated splash screen component that displays the Vedansh logo (stylized V with torch flame and circuit pattern), the brand name 'Vedansh Education & Technology', and the tagline 'Seekho, Badho, Chamko' for 3 seconds with entrance animations before routing to the landing page.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/SplashScreen.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-landing-home-page-with-a-hero-section-featuring-seekho-badho-chamko-as-the-main-headline-sub-headline-india-s-1-ai-powered-free-education-platform-sub-slogan-100-free-quality-education-forever-powered-by-ai-a-nep-2020-compliant-badge-animated-stats-50-exams-class-1-btech-1cr-students-a-feature-highlights-grid-6-cards-and-a-founder-section-with-mrityunjay-pandey-s-name-btech-cse-title-and-founder-ceo-designation",
+      "featureTitle": "Build the Landing/Home page with: a hero section featuring 'Seekho, Badho, Chamko' as the main headline, sub-headline 'India's #1 AI-Powered Free Education Platform', sub-slogan '100% Free Quality Education Forever | Powered by AI', a NEP 2020 Compliant badge, animated stats (50+ Exams, Class 1-BTech, 1Cr+ Students), a feature highlights grid (6+ cards), and a Founder section with Mrityunjay Pandey's name, BTech CSE title, and Founder & CEO designation.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/LandingPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-authentication-page-with-otp-based-login-a-mobile-number-input-field-6-animated-otp-digit-boxes-that-auto-focus-on-entry-a-fully-secure-end-to-end-encrypted-badge-a-resend-otp-button-with-30-second-countdown-timer-and-a-gradient-background-on-successful-otp-entry-any-6-digits-accepted-as-mock-verification-route-to-the-dashboard",
+      "featureTitle": "Build the Authentication page with OTP-based login: a mobile number input field, 6 animated OTP digit boxes that auto-focus on entry, a 'Fully Secure | End-to-End Encrypted' badge, a resend OTP button with 30-second countdown timer, and a gradient background. On successful OTP entry (any 6 digits accepted as mock verification), route to the Dashboard.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/AuthPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-post-login-dashboard-with-a-welcome-message-using-the-student-s-name-quick-access-cards-for-study-practice-wellness-and-ai-tools-a-daily-streak-counter-with-fire-icon-subject-progress-bars-upcoming-quizzes-section-a-nep-2020-compliance-badge-and-a-notification-bell-icon-with-a-mock-unread-badge-count",
+      "featureTitle": "Build the post-login Dashboard with: a welcome message using the student's name, quick access cards for Study, Practice, Wellness, and AI Tools, a daily streak counter with fire icon, subject progress bars, upcoming quizzes section, a NEP 2020 compliance badge, and a notification bell icon with a mock unread badge count.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ProfileSetupModal.tsx",
+        "frontend/src/pages/Dashboard.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-academic-section-page-with-a-class-selector-for-class-1-to-12-and-btech-all-branches-cse-ece-me-ce-ee-it-chemical-etc-subject-cards-per-class-with-icons-ncert-books-section-with-government-approved-badge-study-material-section-video-lectures-section-with-government-approved-badge-and-notes-section-with-pdf-download-button-ui",
+      "featureTitle": "Build the Academic Section page with: a class selector for Class 1 to 12 and BTech (all branches: CSE, ECE, ME, CE, EE, IT, Chemical, etc.), subject cards per class with icons, NCERT Books section with 'Government Approved' badge, Study Material section, Video Lectures section with 'Government Approved' badge, and Notes section with PDF Download button UI.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/AcademicSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-competitive-exam-prep-page-listing-jee-mains-advanced-neet-upsc-ias-ips-ifs-ssc-cgl-chsl-mts-gd-banking-ibps-po-sbi-po-rbi-railway-rrb-ntpc-group-d-alp-bihar-police-and-40-additional-exams-in-a-scrollable-grid-each-exam-card-must-show-free-study-material-mock-tests-and-previous-year-papers-buttons",
+      "featureTitle": "Build the Competitive Exam Prep page listing: JEE Mains+Advanced, NEET, UPSC (IAS/IPS/IFS), SSC (CGL, CHSL, MTS, GD), Banking (IBPS PO, SBI PO, RBI), Railway (RRB NTPC, Group D, ALP), Bihar Police, and 40+ additional exams in a scrollable grid. Each exam card must show Free Study Material, Mock Tests, and Previous Year Papers buttons.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/CompetitiveExams.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-btech-placement-prep-page-with-branch-selector-cse-ece-me-ce-ee-it-chemical-etc-and-sections-for-dsa-coding-with-government-approved-badge-aptitude-reasoning-technical-interview-prep-resume-builder-ui-company-wise-preparation-cards-featuring-top-companies-and-placement-statistics-with-animated-counters",
+      "featureTitle": "Build the BTech Placement Prep page with branch selector (CSE, ECE, ME, CE, EE, IT, Chemical, etc.) and sections for: DSA & Coding with 'Government Approved' badge, Aptitude & Reasoning, Technical Interview Prep, Resume Builder UI, Company-wise preparation cards (featuring top companies), and placement statistics with animated counters.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/PlacementPrep.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-ai-tools-hub-page-with-two-tools-1-ai-maths-tutor-an-animated-interface-with-a-math-input-field-a-mock-math-keyboard-topic-selector-algebra-calculus-statistics-discrete-math-etc-and-a-step-by-step-solution-display-panel-2-ai-english-coach-reading-comprehension-practice-a-speaking-practice-ui-with-a-microphone-button-vocabulary-builder-grammar-checker-ui-and-conversation-practice-section",
+      "featureTitle": "Build the AI Tools Hub page with two tools: (1) AI Maths Tutor — an animated interface with a math input field, a mock math keyboard, topic selector (Algebra, Calculus, Statistics, Discrete Math, etc.), and a step-by-step solution display panel; (2) AI English Coach — reading comprehension practice, a speaking practice UI with a microphone button, vocabulary builder, grammar checker UI, and conversation practice section.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/AIToolsHub.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-student-wellness-success-hub-page-with-four-card-sections-1-health-wellness-mental-health-tips-meditation-timer-ui-eye-strain-alerts-posture-reminders-2-time-management-fully-functional-pomodoro-timer-25-minute-study-5-minute-break-cycles-with-start-pause-reset-study-schedule-planner-ui-daily-goals-checklist-3-motivational-hub-daily-rotating-quote-success-stories-achievement-badges-display-4-study-groups-join-create-group-ui-subject-wise-community-cards-discussion-forum-preview",
+      "featureTitle": "Build the Student Wellness & Success Hub page with four card sections: (1) Health & Wellness — mental health tips, meditation timer UI, eye strain alerts, posture reminders; (2) Time Management — fully functional Pomodoro timer (25-minute study / 5-minute break cycles with start/pause/reset), study schedule planner UI, daily goals checklist; (3) Motivational Hub — daily rotating quote, success stories, achievement badges display; (4) Study Groups — join/create group UI, subject-wise community cards, discussion forum preview.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/WellnessHub.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-government-resources-page-with-three-tabs-sections-government-jobs-categorized-by-sector-scholarships-nsp-state-scholarships-etc-and-government-schemes-for-students-each-entry-card-must-display-an-official-source-badge-and-a-view-details-button-use-sample-data-to-populate-all-sections",
+      "featureTitle": "Build the Government Resources page with three tabs/sections: Government Jobs (categorized by sector), Scholarships (NSP, state scholarships, etc.), and Government Schemes for students. Each entry card must display an 'Official Source' badge and a 'View Details' button. Use sample data to populate all sections.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/GovernmentResources.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-ncert-library-page-with-a-class-selector-1-12-subject-book-cards-displaying-cover-image-placeholders-a-government-approved-stamp-on-each-card-read-online-and-download-pdf-action-buttons-and-a-search-bar-that-filters-books-by-class-or-subject-name",
+      "featureTitle": "Build the NCERT Library page with: a class selector (1-12), subject book cards displaying cover image placeholders, a 'Government Approved' stamp on each card, 'Read Online' and 'Download PDF' action buttons, and a search bar that filters books by class or subject name.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/NCERTLibrary.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-interactive-quizzes-page-with-subject-wise-quiz-selection-a-timed-quiz-mode-mock-30-second-countdown-per-question-a-leaderboard-tab-showing-top-scores-fetched-from-the-backend-score-tracking-displayed-after-quiz-completion-a-review-answers-screen-and-a-confetti-animation-triggered-on-quiz-completion",
+      "featureTitle": "Build the Interactive Quizzes page with: subject-wise quiz selection, a timed quiz mode (mock 30-second countdown per question), a leaderboard tab showing top scores fetched from the backend, score tracking displayed after quiz completion, a review answers screen, and a confetti animation triggered on quiz completion.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/InteractiveQuizzes.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-education-tools-page-btech-with-branch-wise-tabs-and-tool-uis-cse-a-code-editor-ui-syntax-highlighted-textarea-and-algorithm-visualizer-mockup-ece-a-circuit-simulator-ui-mockup-me-a-cad-viewer-ui-mockup-each-tool-must-display-a-government-approved-badge",
+      "featureTitle": "Build the Education Tools page (BTech) with branch-wise tabs and tool UIs: CSE — a code editor UI (syntax-highlighted textarea) and algorithm visualizer mockup; ECE — a circuit simulator UI mockup; ME — a CAD viewer UI mockup. Each tool must display a 'Government Approved' badge.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/EducationTools.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-about-page-with-the-vedansh-education-technology-story-mission-statement-free-quality-education-for-every-indian-vision-statement-empowering-bharat-through-technology-a-founder-profile-card-mrityunjay-pandey-btech-cse-founder-ceo-nep-2020-compliance-details-section-and-a-100-free-forever-commitment-banner",
+      "featureTitle": "Build the About page with: the Vedansh Education & Technology story, Mission statement ('Free Quality Education for Every Indian'), Vision statement ('Empowering Bharat through Technology'), a Founder profile card (Mrityunjay Pandey, BTech CSE, Founder & CEO), NEP 2020 compliance details section, and a '100% Free Forever' commitment banner.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/AboutPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-fixed-bottom-navigation-bar-with-5-tabs-home-study-ai-tools-wellness-and-profile-the-active-tab-must-be-visually-highlighted-the-bar-must-remain-visible-across-all-authenticated-pages-and-use-brand-colors-deep-navy-background-vibrant-orange-active-indicator",
+      "featureTitle": "Implement a fixed bottom navigation bar with 5 tabs: Home, Study, AI Tools, Wellness, and Profile. The active tab must be visually highlighted. The bar must remain visible across all authenticated pages and use brand colors (Deep Navy background, Vibrant Orange active indicator).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/BottomNavBar.tsx",
+        "frontend/src/components/Layout.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-dark-light-mode-toggle-accessible-from-the-dashboard-and-top-navbar-dark-mode-uses-deep-navy-0a1628-backgrounds-light-mode-uses-f8f9fa-the-selected-mode-must-persist-in-localstorage-and-apply-globally-across-all-pages",
+      "featureTitle": "Implement a dark/light mode toggle accessible from the Dashboard and top navbar. Dark mode uses Deep Navy (#0A1628) backgrounds; light mode uses #F8F9FA. The selected mode must persist in localStorage and apply globally across all pages.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-17"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-the-brand-design-system-consistently-across-the-entire-app-primary-color-0a1628-deep-navy-secondary-ff6b00-vibrant-orange-accent-ffd700-gold-success-green-00c851-use-glassmorphism-card-effects-frosted-glass-with-backdrop-blur-gradient-hero-sections-loading-skeleton-placeholders-toast-notifications-for-user-actions-and-smooth-framer-motion-page-transitions-place-a-branded-footer-on-non-dashboard-pages-with-text-vedansh-education-technology-founded-by-mrityunjay-pandey-btech-cse-2024-all-rights-reserved-100-free-education-forever-with-social-media-icons-and-nep-2020-badge",
+      "featureTitle": "Apply the brand design system consistently across the entire app: primary color #0A1628 (Deep Navy), secondary #FF6B00 (Vibrant Orange), accent #FFD700 (Gold), success green #00C851. Use glassmorphism card effects (frosted glass with backdrop blur), gradient hero sections, loading skeleton placeholders, toast notifications for user actions, and smooth Framer Motion page transitions. Place a branded footer on non-dashboard pages with text 'Vedansh Education & Technology | Founded by Mrityunjay Pandey | BTech CSE | © 2024 All Rights Reserved | 100% Free Education Forever' with social media icons and NEP 2020 badge.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Footer.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-18"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-generate-and-render-the-vedansh-education-technology-logo-as-a-static-asset-a-stylized-letter-v-incorporating-a-torch-flame-and-circuit-board-trace-pattern-using-brand-colors-deep-navy-and-vibrant-orange-on-a-white-or-transparent-background",
+      "featureTitle": "Generate and render the Vedansh Education & Technology logo as a static asset: a stylized letter 'V' incorporating a torch flame and circuit board trace pattern, using brand colors Deep Navy and Vibrant Orange on a white or transparent background.",
+      "files": [
+        "frontend/src/components/Header.tsx",
+        "frontend/src/pages/SplashScreen.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-19"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Baloo+2:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Brand Colors */
+    --navy: 0.12 0.06 250;
+    --orange: 0.65 0.22 40;
+    --gold: 0.88 0.18 85;
+    --success: 0.72 0.18 145;
+
+    /* Light mode tokens */
+    --background: 0.97 0.005 250;
+    --foreground: 0.12 0.06 250;
+    --card: 1 0 0;
+    --card-foreground: 0.12 0.06 250;
+    --popover: 1 0 0;
+    --popover-foreground: 0.12 0.06 250;
+    --primary: 0.12 0.06 250;
+    --primary-foreground: 0.98 0 0;
+    --secondary: 0.65 0.22 40;
+    --secondary-foreground: 0.98 0 0;
+    --muted: 0.93 0.01 250;
+    --muted-foreground: 0.45 0.03 250;
+    --accent: 0.88 0.18 85;
+    --accent-foreground: 0.12 0.06 250;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.88 0.02 250;
+    --input: 0.88 0.02 250;
+    --ring: 0.65 0.22 40;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.12 0.06 250;
+    --sidebar-foreground: 0.98 0 0;
+    --sidebar-primary: 0.65 0.22 40;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.18 0.06 250;
+    --sidebar-accent-foreground: 0.98 0 0;
+    --sidebar-border: 0.25 0.06 250;
+    --sidebar-ring: 0.65 0.22 40;
+  }
+
+  .dark {
+    --background: 0.12 0.06 250;
+    --foreground: 0.97 0.005 250;
+    --card: 0.16 0.06 250;
+    --card-foreground: 0.97 0.005 250;
+    --popover: 0.18 0.06 250;
+    --popover-foreground: 0.97 0.005 250;
+    --primary: 0.65 0.22 40;
+    --primary-foreground: 0.98 0 0;
+    --secondary: 0.22 0.06 250;
+    --secondary-foreground: 0.97 0.005 250;
+    --muted: 0.20 0.05 250;
+    --muted-foreground: 0.65 0.03 250;
+    --accent: 0.88 0.18 85;
+    --accent-foreground: 0.12 0.06 250;
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.205 0 0;
+    --border: 1 0 0 / 12%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.65 0.22 40;
+    --chart-1: 0.488 0.243 264.376;
+    --chart-2: 0.696 0.17 162.48;
+    --chart-3: 0.769 0.188 70.08;
+    --chart-4: 0.627 0.265 303.9;
+    --chart-5: 0.645 0.246 16.439;
+    --sidebar: 0.10 0.06 250;
+    --sidebar-foreground: 0.97 0.005 250;
+    --sidebar-primary: 0.65 0.22 40;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.18 0.06 250;
+    --sidebar-accent-foreground: 0.97 0.005 250;
+    --sidebar-border: 1 0 0 / 12%;
+    --sidebar-ring: 0.65 0.22 40;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg;
+  }
+
+  .glass-card-light {
+    @apply bg-white/80 backdrop-blur-md border border-white/60 rounded-2xl shadow-lg;
+  }
+
+  .glass-card-dark {
+    background-color: rgba(10, 22, 40, 0.8);
+    @apply backdrop-blur-md border border-white/10 rounded-2xl shadow-lg;
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, #0A1628 0%, #1a2d4f 50%, #0A1628 100%);
+  }
+
+  .gradient-orange {
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 100%);
+  }
+
+  .gradient-gold {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  }
+
+  .gradient-card {
+    background: linear-gradient(135deg, rgba(255,107,0,0.1) 0%, rgba(255,215,0,0.05) 100%);
+  }
+
+  .govt-badge {
+    @apply inline-flex items-center gap-1 bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 rounded-full px-2 py-0.5 text-xs font-semibold;
+  }
+
+  .nep-badge {
+    @apply inline-flex items-center gap-1 bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/30 rounded-full px-2 py-0.5 text-xs font-semibold;
+  }
+
+  .free-badge {
+    @apply inline-flex items-center gap-1 bg-orange-500/20 text-orange-600 dark:text-orange-400 border border-orange-500/30 rounded-full px-2 py-0.5 text-xs font-bold;
+  }
+
+  .btn-primary {
+    @apply bg-vedansh-orange hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg active:scale-95;
+  }
+
+  .btn-secondary {
+    background-color: #0A1628;
+    @apply text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg active:scale-95;
+  }
+
+  .btn-secondary:hover {
+    background-color: #12285d;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold font-baloo text-vedansh-navy dark:text-white;
+  }
+
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .text-gradient-orange {
+    background: linear-gradient(135deg, #FF6B00, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-navy {
+    background: linear-gradient(135deg, #0A1628, #1a4080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}

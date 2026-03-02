@@ -1,0 +1,459 @@
+{
+  "kind": "build_request",
+  "title": "Vedansh Education & Technology – Full Educational App",
+  "projectName": "Vedansh Education",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a Motoko backend actor that stores mock student data including name, phone number (as identifier), streak count, progress per subject, quiz scores, and achievement badges. Expose query and update functions: getStudent, updateStreak, saveQuizScore, getLeaderboard.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Progress tracker",
+          "Daily streak counter",
+          "Leaderboard",
+          "Score tracking"
+        ]
+      },
+      "acceptanceCriteria": [
+        "getStudent returns student record by phone ID",
+        "updateStreak increments daily streak",
+        "saveQuizScore persists score and updates leaderboard",
+        "getLeaderboard returns top 10 scores"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Build an animated splash screen component that displays the Vedansh logo (stylized V with torch flame and circuit pattern), the brand name 'Vedansh Education & Technology', and the tagline 'Seekho, Badho, Chamko' for 3 seconds with entrance animations before routing to the landing page.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Animated splash screen (3 seconds with logo animation)",
+          "Animated splash screen with Vedansh logo"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Splash screen displays for exactly 3 seconds",
+        "Logo animates in with scale/fade effect",
+        "Tagline appears with staggered animation",
+        "Automatically transitions to landing page after 3 seconds"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Build the Landing/Home page with: a hero section featuring 'Seekho, Badho, Chamko' as the main headline, sub-headline 'India's #1 AI-Powered Free Education Platform', sub-slogan '100% Free Quality Education Forever | Powered by AI', a NEP 2020 Compliant badge, animated stats (50+ Exams, Class 1-BTech, 1Cr+ Students), a feature highlights grid (6+ cards), and a Founder section with Mrityunjay Pandey's name, BTech CSE title, and Founder & CEO designation.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Hero section with slogan",
+          "Stats: 50+ Exams, Class 1-BTech, 1Cr+ Students",
+          "Founder section with Mrityunjay Pandey, BTech CSE"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero headline 'Seekho, Badho, Chamko' is prominently displayed",
+        "All three stat counters animate on scroll",
+        "NEP 2020 badge is visible",
+        "Founder section shows Mrityunjay Pandey, BTech CSE, Founder & CEO",
+        "Feature highlights grid shows at least 6 cards"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Build the Authentication page with OTP-based login: a mobile number input field, 6 animated OTP digit boxes that auto-focus on entry, a 'Fully Secure | End-to-End Encrypted' badge, a resend OTP button with 30-second countdown timer, and a gradient background. On successful OTP entry (any 6 digits accepted as mock verification), route to the Dashboard.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "OTP-based login (mobile number input)",
+          "Animated OTP input boxes (6 digits)",
+          "Resend OTP with countdown timer"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Mobile number input accepts 10-digit numbers",
+        "6 OTP boxes auto-advance focus on digit entry",
+        "Resend button is disabled during 30-second countdown",
+        "Security badge is visible",
+        "Any valid 6-digit entry routes to dashboard"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Build the post-login Dashboard with: a welcome message using the student's name, quick access cards for Study, Practice, Wellness, and AI Tools, a daily streak counter with fire icon, subject progress bars, upcoming quizzes section, a NEP 2020 compliance badge, and a notification bell icon with a mock unread badge count.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Welcome message with student name",
+          "Quick access cards: Study, Practice, Wellness, AI Tools",
+          "Progress tracker",
+          "Daily streak counter",
+          "Upcoming quizzes"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Welcome message shows student name",
+        "4 quick access cards navigate to correct pages",
+        "Streak counter displays current streak with fire icon",
+        "Subject progress bars render with percentage values",
+        "Notification bell shows badge count"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Build the Academic Section page with: a class selector for Class 1 to 12 and BTech (all branches: CSE, ECE, ME, CE, EE, IT, Chemical, etc.), subject cards per class with icons, NCERT Books section with 'Government Approved' badge, Study Material section, Video Lectures section with 'Government Approved' badge, and Notes section with PDF Download button UI.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Class selector: Class 1 to 12 + BTech (all branches)",
+          "NCERT Books (Class 1-12) - Government Approved badge",
+          "Video Lectures with Government Approved badge",
+          "Notes with PDF Download feature"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Class selector shows all classes 1-12 plus BTech branches",
+        "Selecting a class updates visible subjects",
+        "Government Approved badges appear on NCERT Books and Video Lectures sections",
+        "PDF Download button is visible on Notes cards",
+        "Subject cards display relevant icons"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Build the Competitive Exam Prep page listing: JEE Mains+Advanced, NEET, UPSC (IAS/IPS/IFS), SSC (CGL, CHSL, MTS, GD), Banking (IBPS PO, SBI PO, RBI), Railway (RRB NTPC, Group D, ALP), Bihar Police, and 40+ additional exams in a scrollable grid. Each exam card must show Free Study Material, Mock Tests, and Previous Year Papers buttons.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "50+ more exams listed in scrollable grid",
+          "Each with: Free Study Material, Mock Tests, Previous Year Papers"
+        ]
+      },
+      "acceptanceCriteria": [
+        "At least 50 exam entries are visible in the grid",
+        "Each card has three action buttons: Free Study Material, Mock Tests, Previous Year Papers",
+        "Exam categories are visually grouped or labeled",
+        "Page is fully scrollable on mobile"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Build the BTech Placement Prep page with branch selector (CSE, ECE, ME, CE, EE, IT, Chemical, etc.) and sections for: DSA & Coding with 'Government Approved' badge, Aptitude & Reasoning, Technical Interview Prep, Resume Builder UI, Company-wise preparation cards (featuring top companies), and placement statistics with animated counters.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "All branches: CSE, ECE, ME, CE, EE, IT, Chemical, etc.",
+          "DSA & Coding (Government Approved tools)",
+          "Resume Builder",
+          "Company-wise preparation",
+          "Placement statistics"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Branch selector filters visible content",
+        "DSA & Coding section has Government Approved badge",
+        "Resume Builder section is present with form UI",
+        "Company cards show at least 10 top companies",
+        "Placement stats animate on entry"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Build the AI Tools Hub page with two tools: (1) AI Maths Tutor — an animated interface with a math input field, a mock math keyboard, topic selector (Algebra, Calculus, Statistics, Discrete Math, etc.), and a step-by-step solution display panel; (2) AI English Coach — reading comprehension practice, a speaking practice UI with a microphone button, vocabulary builder, grammar checker UI, and conversation practice section.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "AI Maths Tutor",
+          "Step-by-step solution display",
+          "AI English Coach",
+          "Speaking practice with mic button (UI only)",
+          "Vocabulary builder",
+          "Grammar checker"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Two distinct tool tabs or sections are visible",
+        "Math input field accepts text and displays mock step-by-step solution on submit",
+        "Topic selector for math is functional",
+        "Microphone button is present in English Coach (UI only, no actual recording)",
+        "Vocabulary and grammar sections have sample content"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Build the Student Wellness & Success Hub page with four card sections: (1) Health & Wellness — mental health tips, meditation timer UI, eye strain alerts, posture reminders; (2) Time Management — fully functional Pomodoro timer (25-minute study / 5-minute break cycles with start/pause/reset), study schedule planner UI, daily goals checklist; (3) Motivational Hub — daily rotating quote, success stories, achievement badges display; (4) Study Groups — join/create group UI, subject-wise community cards, discussion forum preview.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Pomodoro timer (25 min study, 5 min break)",
+          "Daily quote",
+          "Achievement badges",
+          "Study Groups"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Pomodoro timer counts down from 25:00, switches to 5:00 break automatically",
+        "Start, pause, and reset controls work correctly",
+        "Daily motivational quote rotates each time the page loads",
+        "Achievement badges grid is visible with sample badges",
+        "Study Groups section shows join/create UI"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Build the Government Resources page with three tabs/sections: Government Jobs (categorized by sector), Scholarships (NSP, state scholarships, etc.), and Government Schemes for students. Each entry card must display an 'Official Source' badge and a 'View Details' button. Use sample data to populate all sections.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Government Jobs listing (categorized)",
+          "Scholarships (NSP, State scholarships, etc.)",
+          "Government Schemes for students",
+          "Each with official source badge"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Three distinct tabs or sections for Jobs, Scholarships, Schemes",
+        "Each card has an official source badge",
+        "At least 5 sample entries per section",
+        "View Details button is present on every card"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Build the NCERT Library page with: a class selector (1-12), subject book cards displaying cover image placeholders, a 'Government Approved' stamp on each card, 'Read Online' and 'Download PDF' action buttons, and a search bar that filters books by class or subject name.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Class 1 to 12 with all subjects",
+          "Beautiful book cards with cover images",
+          "Government Approved stamp",
+          "Read online / Download PDF buttons",
+          "Search functionality"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All classes 1-12 are selectable",
+        "Book cards show subject name, class, and Government Approved stamp",
+        "Read Online and Download PDF buttons are visible",
+        "Search bar filters results in real time"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Build the Interactive Quizzes page with: subject-wise quiz selection, a timed quiz mode (mock 30-second countdown per question), a leaderboard tab showing top scores fetched from the backend, score tracking displayed after quiz completion, a review answers screen, and a confetti animation triggered on quiz completion.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Subject-wise quizzes",
+          "Timed quiz mode",
+          "Leaderboard",
+          "Score tracking",
+          "Review answers feature",
+          "Confetti animation on completion"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Subject selector shows at least 6 subjects",
+        "Timer counts down per question",
+        "Confetti animation triggers on quiz completion",
+        "Score is saved to backend via saveQuizScore",
+        "Leaderboard fetches from backend getLeaderboard",
+        "Review mode shows correct answers"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Build the Education Tools page (BTech) with branch-wise tabs and tool UIs: CSE — a code editor UI (syntax-highlighted textarea) and algorithm visualizer mockup; ECE — a circuit simulator UI mockup; ME — a CAD viewer UI mockup. Each tool must display a 'Government Approved' badge.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "CSE: Code editor (UI), Algorithm visualizer",
+          "ECE: Circuit simulator (UI)",
+          "ME: CAD viewer (UI)",
+          "All marked as Government Approved"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Branch tabs switch visible tool content",
+        "Code editor textarea is visible for CSE",
+        "Government Approved badge appears on all tools",
+        "Placeholder visuals present for circuit simulator and CAD viewer"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Build the About page with: the Vedansh Education & Technology story, Mission statement ('Free Quality Education for Every Indian'), Vision statement ('Empowering Bharat through Technology'), a Founder profile card (Mrityunjay Pandey, BTech CSE, Founder & CEO), NEP 2020 compliance details section, and a '100% Free Forever' commitment banner.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Vedansh Education & Technology story",
+          "Mission: 'Free Quality Education for Every Indian'",
+          "Founder profile: Mrityunjay Pandey, BTech CSE, Founder & CEO",
+          "NEP 2020 compliance details",
+          "100% Free Forever commitment"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Mission and Vision sections are clearly labeled",
+        "Founder card displays name, title, and role",
+        "NEP 2020 section explains compliance",
+        "100% Free Forever banner is prominent"
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "Implement a fixed bottom navigation bar with 5 tabs: Home, Study, AI Tools, Wellness, and Profile. The active tab must be visually highlighted. The bar must remain visible across all authenticated pages and use brand colors (Deep Navy background, Vibrant Orange active indicator).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Bottom navigation bar with 5 tabs: Home, Study, AI Tools, Wellness, Profile"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Bottom nav is fixed to viewport bottom on all authenticated pages",
+        "Active tab shows orange highlight",
+        "Tapping each tab navigates to the correct page",
+        "Nav is fully responsive on mobile"
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "text": "Implement a dark/light mode toggle accessible from the Dashboard and top navbar. Dark mode uses Deep Navy (#0A1628) backgrounds; light mode uses #F8F9FA. The selected mode must persist in localStorage and apply globally across all pages.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Dark/Light mode toggle",
+          "Background: #F8F9FA (Light) / #0A1628 (Dark)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Toggle button is visible in the header/navbar",
+        "Dark mode applies deep navy background globally",
+        "Light mode applies light gray background globally",
+        "Preference persists after page refresh via localStorage"
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "text": "Apply the brand design system consistently across the entire app: primary color #0A1628 (Deep Navy), secondary #FF6B00 (Vibrant Orange), accent #FFD700 (Gold), success green #00C851. Use glassmorphism card effects (frosted glass with backdrop blur), gradient hero sections, loading skeleton placeholders, toast notifications for user actions, and smooth Framer Motion page transitions. Place a branded footer on non-dashboard pages with text 'Vedansh Education & Technology | Founded by Mrityunjay Pandey | BTech CSE | © 2024 All Rights Reserved | 100% Free Education Forever' with social media icons and NEP 2020 badge.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Glassmorphism effects",
+          "Smooth page transitions with Framer Motion",
+          "Loading skeletons",
+          "Toast notifications",
+          "Brand Colors: Deep Navy Blue (#0A1628), Vibrant Orange (#FF6B00), Pure White, Gold (#FFD700)",
+          "Footer/Branding"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All brand colors are used consistently per spec",
+        "Cards use glassmorphism/frosted glass styling",
+        "Page transitions animate smoothly",
+        "Loading skeletons appear before content loads",
+        "Toast notifications fire on key actions",
+        "Footer appears on all non-dashboard pages with correct branding text"
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "text": "Generate and render the Vedansh Education & Technology logo as a static asset: a stylized letter 'V' incorporating a torch flame and circuit board trace pattern, using brand colors Deep Navy and Vibrant Orange on a white or transparent background.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Logo: A stylized 'V' with a torch/flame and circuit board pattern representing technology + education"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Logo image is displayed in the splash screen",
+        "Logo is displayed in the top navbar/header",
+        "Logo uses the stylized V with torch and circuit elements"
+      ]
+    }
+  ],
+  "constraints": [
+    "All AI tool interactions (Math Tutor, English Coach) must be UI-only mock interfaces — no actual AI/LLM API calls",
+    "OTP verification must be a mock flow — any 6-digit code is accepted",
+    "PDF download and Read Online buttons are UI-only and do not fetch real files",
+    "Microphone button in English Coach is UI-only with no actual audio recording",
+    "Use only brand colors: #0A1628, #FF6B00, #FFD700, #00C851, white, and #F8F9FA"
+  ],
+  "nonGoals": [
+    "Real OTP SMS delivery or phone verification",
+    "Actual AI/ML model integration",
+    "Real PDF hosting or file downloads",
+    "Video streaming or actual video lectures",
+    "Real-time chat or WebSockets",
+    "Internet Identity / wallet authentication",
+    "External API integrations (government portals, NCERT servers, etc.)",
+    "Payment processing"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Vedansh Education & Technology logo: stylized letter V with torch flame and circuit board traces, Deep Navy (#0A1628) and Vibrant Orange (#FF6B00) on transparent background (vedansh-logo.dim_256x256.png)",
+      "Splash screen hero background: abstract dark navy blue gradient with glowing orange and gold light rays and subtle circuit pattern texture (splash-bg.dim_1080x1920.png)",
+      "Founder profile avatar placeholder: professional illustration of a young Indian male engineer in formal attire with tech background (founder-avatar.dim_256x256.png)",
+      "NEP 2020 compliance badge: official-style green and white badge with 'NEP 2020 Compliant' text and checkmark seal (nep2020-badge.dim_200x80.png)",
+      "Government Approved stamp: green circular stamp graphic with checkmark and 'Govt. Approved' text (govt-approved-stamp.dim_128x128.png)"
+    ],
+    "edits": []
+  }
+}

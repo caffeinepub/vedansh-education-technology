@@ -1,0 +1,6 @@
+{
+  "frontend/src/pages/InteractiveQuizzes.tsx": "Full interactive quiz page with subject selection, timed 30-second countdown per question, answer selection with visual feedback, confetti on completion, score saving to backend, leaderboard display, and answer review mode.",
+  "frontend/src/pages/EducationTools.tsx": "BTech education tools page with branch tabs — CSE has a functional code editor with mock execution and algorithm visualizer, ECE has a circuit simulator UI mockup, ME has a CAD viewer mockup, and Others covers CE/EE/IT/Chemical branches with government-approved badges throughout.",
+  "frontend/src/pages/AboutPage.tsx": "About page for Vedansh Education & Technology featuring a 100% Free Forever banner, mission/vision sections, founder profile (Mrityunjay Pandey, BTech CSE), company timeline, NEP 2020 compliance details, core values grid, and impact statistics.",
+  "frontend/src/index.css": "Global stylesheet with OKLCH design tokens for light/dark mode, brand color variables, and component utility classes. Fixed `.glass-card-dark` and `.btn-secondary` to use direct CSS `background-color` properties instead of `@apply` with custom color opacity modifiers that Tailwind cannot resolve at build time."
+}
