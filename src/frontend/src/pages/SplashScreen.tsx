@@ -70,14 +70,22 @@ export default function SplashScreen() {
               style={{ background: "oklch(0.62 0.22 40 / 0.5)" }}
             />
             <div
-              className="relative rounded-2xl shadow-2xl px-4 py-3 overflow-hidden"
-              style={{ background: "rgba(255,255,255,0.97)" }}
+              className="relative rounded-2xl shadow-2xl px-5 py-3"
+              style={{
+                background: "rgba(255,255,255,0.97)",
+                minWidth: "280px",
+                maxWidth: "340px",
+              }}
             >
               <img
                 src="/assets/generated/vedansh-logo-wide.dim_480x160.png"
                 alt="Vedansh Logo"
                 className="h-20 w-auto object-contain"
-                style={{ maxWidth: "300px" }}
+                style={{
+                  maxWidth: "300px",
+                  display: "block",
+                  margin: "0 auto",
+                }}
               />
             </div>
           </div>

@@ -1,0 +1,17 @@
+{
+  "name": "Vedansh Education & Technology",
+  "short_name": "Vedansh",
+  "description": "India's Free Education Platform",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d1b4b",
+  "theme_color": "#1a237e",
+  "icons": [
+    {
+      "src": "/assets/generated/vedansh-logo.dim_256x256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

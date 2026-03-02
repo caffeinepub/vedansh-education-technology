@@ -187,6 +187,36 @@ const govtSchemes: ResourceItem[] = [
   },
 ];
 
+function getSourceUrl(source: string): string {
+  const urlMap: Record<string, string> = {
+    "upsc.gov.in": "https://upsc.gov.in/",
+    "ssc.nic.in": "https://ssc.nic.in/",
+    "indianrailways.gov.in": "https://www.indianrailways.gov.in/",
+    "ibps.in": "https://www.ibps.in/",
+    "csbc.bih.nic.in": "https://csbc.bih.nic.in/",
+    "ctet.nic.in": "https://ctet.nic.in/",
+    "drdo.gov.in": "https://www.drdo.gov.in/",
+    "scholarships.gov.in": "https://scholarships.gov.in/",
+    "nationalsscholarship.nic.in": "https://scholarships.gov.in/",
+    "ksb.gov.in": "https://ksb.gov.in/",
+    "online-inspire.gov.in": "https://online-inspire.gov.in/",
+    "aicte-india.org": "https://www.aicte-india.org/",
+    "pmsonline.bih.nic.in": "https://pmsonline.bih.nic.in/",
+    "pmkvyofficial.org": "https://pmkvyofficial.org/",
+    "digitalindia.gov.in": "https://digitalindia.gov.in/",
+    "startupindia.gov.in": "https://www.startupindia.gov.in/",
+    "swayam.gov.in": "https://swayam.gov.in/",
+    "epathshala.nic.in": "https://epathshala.nic.in/",
+    "ndl.gov.in": "https://ndl.gov.in/",
+    "vidyanjali.education.gov.in": "https://vidyanjali.education.gov.in/",
+    "pmevidya.education.gov.in": "https://pmevidya.education.gov.in/",
+    "rrbcdg.gov.in": "https://www.rrbcdg.gov.in/",
+    "nta.ac.in": "https://www.nta.ac.in/",
+    "csbc.bihar.gov.in": "https://csbc.bihar.gov.in/",
+  };
+  return urlMap[source] || `https://${source}`;
+}
+
 function ResourceCard({ item }: { item: ResourceItem }) {
   const [open, setOpen] = useState(false);
 
@@ -216,17 +246,29 @@ function ResourceCard({ item }: { item: ResourceItem }) {
             </span>
           )}
         </div>
-        <div className="flex items-center justify-between">
-          <span className="text-foreground/40 text-xs flex items-center gap-1">
-            <ExternalLink className="w-3 h-3" /> {item.source}
+        <div className="flex flex-col gap-2">
+          <span className="text-foreground/40 text-xs flex items-center gap-1 truncate min-w-0">
+            <ExternalLink className="w-3 h-3 shrink-0" /> {item.source}
           </span>
-          <button
-            type="button"
-            onClick={() => setOpen(true)}
-            className="text-xs bg-vedansh-orange/10 text-vedansh-orange font-semibold px-3 py-1.5 rounded-lg hover:bg-vedansh-orange/20 transition-colors"
-          >
-            View Details
-          </button>
+          <div className="flex gap-2">
+            <a
+              href={getSourceUrl(item.source)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 text-center text-xs bg-blue-600 text-white font-semibold px-2.5 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-1"
+              data-ocid="govt.visit.button"
+            >
+              <ExternalLink className="w-3 h-3" /> Official Website
+            </a>
+            <button
+              type="button"
+              onClick={() => setOpen(true)}
+              className="text-xs bg-vedansh-orange/10 text-vedansh-orange font-semibold px-2.5 py-2 rounded-lg hover:bg-vedansh-orange/20 transition-colors"
+              data-ocid="govt.details.button"
+            >
+              Details
+            </button>
+          </div>
         </div>
       </div>
 
@@ -274,7 +316,9 @@ function ResourceCard({ item }: { item: ResourceItem }) {
             <button
               type="button"
               onClick={() => {
-                toast.info("Redirecting to official website...");
+                const url = getSourceUrl(item.source);
+                window.open(url, "_blank", "noopener,noreferrer");
+                toast.info("Official website khul rahi hai...");
                 setOpen(false);
               }}
               className="w-full bg-vedansh-orange hover:bg-orange-600 text-white font-semibold py-2.5 rounded-xl transition-colors flex items-center justify-center gap-2"

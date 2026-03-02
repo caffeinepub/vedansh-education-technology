@@ -23,6 +23,7 @@ import {
   X,
 } from "lucide-react";
 import { useMemo, useState } from "react";
+import { toast } from "sonner";
 
 interface Book {
   subject: string;
@@ -909,13 +910,16 @@ export default function NCERTLibrary() {
                       </button>
                       <button
                         type="button"
-                        onClick={() =>
+                        onClick={() => {
                           window.open(
-                            book.pdfUrl,
+                            book.onlineReadUrl,
                             "_blank",
                             "noopener,noreferrer",
-                          )
-                        }
+                          );
+                          toast.info(
+                            "NCERT website mein chapter select karke PDF download karein",
+                          );
+                        }}
                         className="flex-1 flex items-center justify-center gap-1.5 bg-blue-500/10 text-blue-500 text-xs font-semibold py-2 rounded-lg hover:bg-blue-500/20 transition-colors"
                       >
                         <Download className="w-3 h-3" /> Download PDF

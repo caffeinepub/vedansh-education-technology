@@ -111,6 +111,134 @@ const subjectsByClass: Record<
       color: "from-red-500 to-red-600",
     },
   ],
+  "BTech - ECE": [
+    {
+      name: "Electronics Fundamentals",
+      icon: "📡",
+      color: "from-blue-500 to-blue-600",
+    },
+    {
+      name: "Digital Electronics",
+      icon: "💾",
+      color: "from-purple-500 to-purple-600",
+    },
+    {
+      name: "Signals & Systems",
+      icon: "〰️",
+      color: "from-green-500 to-green-600",
+    },
+    {
+      name: "Communication Systems",
+      icon: "📶",
+      color: "from-orange-500 to-orange-600",
+    },
+    { name: "VLSI Design", icon: "🔬", color: "from-teal-500 to-teal-600" },
+    { name: "Microprocessors", icon: "⚙️", color: "from-red-500 to-red-600" },
+  ],
+  "BTech - ME": [
+    { name: "Thermodynamics", icon: "🌡️", color: "from-red-500 to-red-600" },
+    { name: "Fluid Mechanics", icon: "💧", color: "from-blue-500 to-blue-600" },
+    { name: "Machine Design", icon: "⚙️", color: "from-gray-600 to-gray-700" },
+    {
+      name: "Manufacturing",
+      icon: "🏭",
+      color: "from-orange-500 to-orange-600",
+    },
+    { name: "Heat Transfer", icon: "🔥", color: "from-amber-500 to-amber-600" },
+    { name: "CAD/CAM", icon: "🖥️", color: "from-purple-500 to-purple-600" },
+  ],
+  "BTech - CE": [
+    {
+      name: "Structural Analysis",
+      icon: "🏗️",
+      color: "from-stone-600 to-stone-700",
+    },
+    {
+      name: "Concrete Technology",
+      icon: "🧱",
+      color: "from-gray-500 to-gray-600",
+    },
+    {
+      name: "Soil Mechanics",
+      icon: "🌍",
+      color: "from-amber-700 to-amber-800",
+    },
+    {
+      name: "Transportation Engineering",
+      icon: "🛣️",
+      color: "from-blue-500 to-blue-600",
+    },
+    { name: "Hydraulics", icon: "💧", color: "from-teal-500 to-teal-600" },
+    { name: "Surveying", icon: "📏", color: "from-green-500 to-green-600" },
+  ],
+  "BTech - EE": [
+    {
+      name: "Circuit Theory",
+      icon: "⚡",
+      color: "from-yellow-500 to-yellow-600",
+    },
+    { name: "Power Systems", icon: "🔋", color: "from-blue-500 to-blue-600" },
+    {
+      name: "Electrical Machines",
+      icon: "🔌",
+      color: "from-red-500 to-red-600",
+    },
+    {
+      name: "Control Systems",
+      icon: "🎛️",
+      color: "from-purple-500 to-purple-600",
+    },
+    {
+      name: "Power Electronics",
+      icon: "💡",
+      color: "from-orange-500 to-orange-600",
+    },
+    {
+      name: "Instrumentation",
+      icon: "📊",
+      color: "from-green-500 to-green-600",
+    },
+  ],
+  "BTech - IT": [
+    { name: "Data Structures", icon: "🌳", color: "from-blue-500 to-blue-600" },
+    {
+      name: "Web Technologies",
+      icon: "🌐",
+      color: "from-purple-500 to-purple-600",
+    },
+    { name: "Cloud Computing", icon: "☁️", color: "from-sky-500 to-sky-600" },
+    { name: "Cybersecurity", icon: "🔐", color: "from-red-500 to-red-600" },
+    {
+      name: "Database Systems",
+      icon: "🗄️",
+      color: "from-green-500 to-green-600",
+    },
+    {
+      name: "Mobile Development",
+      icon: "📱",
+      color: "from-orange-500 to-orange-600",
+    },
+  ],
+  "BTech - Chemical": [
+    {
+      name: "Chemical Reaction Engineering",
+      icon: "⚗️",
+      color: "from-green-500 to-green-600",
+    },
+    { name: "Mass Transfer", icon: "🔄", color: "from-blue-500 to-blue-600" },
+    { name: "Heat Transfer", icon: "🔥", color: "from-red-500 to-red-600" },
+    {
+      name: "Process Control",
+      icon: "🎛️",
+      color: "from-purple-500 to-purple-600",
+    },
+    {
+      name: "Thermodynamics",
+      icon: "🌡️",
+      color: "from-orange-500 to-orange-600",
+    },
+    { name: "Fluid Mechanics", icon: "💧", color: "from-teal-500 to-teal-600" },
+  ],
 };
 
 function getSubjectsForClass(cls: string) {
@@ -233,6 +361,65 @@ const ncertPdfLinks: Record<string, Record<string, string>> = {
     Biology: "https://ncert.nic.in/textbook.php?lebo1=0-16",
     English: "https://ncert.nic.in/textbook.php?lerh1=0-8",
     "Computer Science": "https://ncert.nic.in/textbook.php?lecs1=0-9",
+  },
+  "BTech - CSE": {
+    "Data Structures": "https://nptel.ac.in/courses/106/106/106106127/",
+    Algorithms: "https://nptel.ac.in/courses/106/101/106101060/",
+    DBMS: "https://nptel.ac.in/courses/106/105/106105175/",
+    "Operating Systems": "https://nptel.ac.in/courses/106/105/106105044/",
+    "Computer Networks": "https://nptel.ac.in/courses/106/105/106105081/",
+    "Software Engineering": "https://nptel.ac.in/courses/106/105/106105182/",
+  },
+  "BTech - ECE": {
+    "Electronics Fundamentals":
+      "https://nptel.ac.in/courses/108/108/108108071/",
+    "Digital Electronics": "https://nptel.ac.in/courses/117/105/117105080/",
+    "Signals & Systems": "https://nptel.ac.in/courses/117/101/117101153/",
+    "Communication Systems": "https://nptel.ac.in/courses/117/105/117105099/",
+    "VLSI Design": "https://nptel.ac.in/courses/117/101/117101052/",
+    Microprocessors: "https://nptel.ac.in/courses/108/102/108102042/",
+  },
+  "BTech - ME": {
+    Thermodynamics: "https://nptel.ac.in/courses/112/105/112105225/",
+    "Fluid Mechanics": "https://nptel.ac.in/courses/112/105/112105171/",
+    "Machine Design": "https://nptel.ac.in/courses/112/105/112105125/",
+    Manufacturing: "https://nptel.ac.in/courses/112/105/112105231/",
+    "Heat Transfer": "https://nptel.ac.in/courses/112/105/112105129/",
+    "CAD/CAM": "https://nptel.ac.in/courses/112/105/112105163/",
+  },
+  "BTech - CE": {
+    "Structural Analysis": "https://nptel.ac.in/courses/105/101/105101085/",
+    "Concrete Technology": "https://nptel.ac.in/courses/105/105/105105070/",
+    "Soil Mechanics": "https://nptel.ac.in/courses/105/101/105101083/",
+    "Transportation Engineering":
+      "https://nptel.ac.in/courses/105/101/105101087/",
+    Hydraulics: "https://nptel.ac.in/courses/105/105/105105045/",
+    Surveying: "https://nptel.ac.in/courses/105/101/105101003/",
+  },
+  "BTech - EE": {
+    "Circuit Theory": "https://nptel.ac.in/courses/108/105/108105154/",
+    "Power Systems": "https://nptel.ac.in/courses/108/105/108105040/",
+    "Electrical Machines": "https://nptel.ac.in/courses/108/105/108105066/",
+    "Control Systems": "https://nptel.ac.in/courses/108/105/108105020/",
+    "Power Electronics": "https://nptel.ac.in/courses/108/105/108105039/",
+    Instrumentation: "https://nptel.ac.in/courses/108/105/108105082/",
+  },
+  "BTech - IT": {
+    "Data Structures": "https://nptel.ac.in/courses/106/106/106106127/",
+    "Web Technologies": "https://nptel.ac.in/courses/106/105/106105084/",
+    "Cloud Computing": "https://nptel.ac.in/courses/106/102/106102076/",
+    Cybersecurity: "https://nptel.ac.in/courses/106/105/106105031/",
+    "Database Systems": "https://nptel.ac.in/courses/106/105/106105175/",
+    "Mobile Development": "https://nptel.ac.in/courses/106/105/106105219/",
+  },
+  "BTech - Chemical": {
+    "Chemical Reaction Engineering":
+      "https://nptel.ac.in/courses/103/105/103105109/",
+    "Mass Transfer": "https://nptel.ac.in/courses/103/101/103101004/",
+    "Heat Transfer": "https://nptel.ac.in/courses/103/107/103107058/",
+    "Process Control": "https://nptel.ac.in/courses/103/107/103107062/",
+    Thermodynamics: "https://nptel.ac.in/courses/103/105/103105105/",
+    "Fluid Mechanics": "https://nptel.ac.in/courses/103/107/103107082/",
   },
 };
 
@@ -510,6 +697,9 @@ function getVideosForSubject(cls: string, subject: string) {
 }
 
 function getPdfUrl(cls: string, subject: string): string {
+  if (cls.startsWith("BTech")) {
+    return ncertPdfLinks[cls]?.[subject] || "https://nptel.ac.in/";
+  }
   return ncertPdfLinks[cls]?.[subject] || "https://ncert.nic.in/textbook.php";
 }
 

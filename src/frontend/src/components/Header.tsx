@@ -60,15 +60,30 @@ export default function Header() {
             data-ocid="header.link"
           >
             <div
-              className="relative flex-shrink-0 h-10 rounded-lg border border-border bg-white shadow-sm px-2 py-1 flex items-center justify-center overflow-hidden"
-              style={{ width: "auto", minWidth: "140px" }}
+              className="flex-shrink-0 h-10 bg-white rounded-lg border border-border shadow-sm px-2 py-1 flex items-center"
+              style={{ minWidth: "160px", maxWidth: "220px" }}
             >
               <img
                 src="/assets/generated/vedansh-logo-wide.dim_480x160.png"
                 alt="Vedansh Education & Technology"
-                className="h-8 w-auto object-contain"
-                style={{ maxWidth: "180px" }}
+                className="h-8 w-auto object-contain block"
+                style={{ maxWidth: "200px" }}
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  target.style.display = "none";
+                  const fallback = target.nextElementSibling as HTMLElement;
+                  if (fallback) fallback.style.display = "flex";
+                }}
               />
+              <span
+                className="hidden items-center gap-1.5 font-bold text-sm text-primary"
+                style={{ display: "none" }}
+              >
+                <span className="bg-primary text-primary-foreground rounded px-1.5 py-0.5 text-xs font-black">
+                  V
+                </span>
+                VEDANSH
+              </span>
             </div>
           </Link>
 

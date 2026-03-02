@@ -149,14 +149,22 @@ export default function LandingPage() {
                 style={{ background: "oklch(0.62 0.22 40 / 0.6)" }}
               />
               <div
-                className="relative rounded-2xl shadow-2xl px-5 py-3 overflow-hidden"
-                style={{ background: "rgba(255,255,255,0.97)" }}
+                className="relative rounded-2xl shadow-2xl px-5 py-3"
+                style={{
+                  background: "rgba(255,255,255,0.97)",
+                  minWidth: "280px",
+                  maxWidth: "360px",
+                }}
               >
                 <img
                   src="/assets/generated/vedansh-logo-wide.dim_480x160.png"
                   alt="Vedansh Education & Technology"
                   className="h-20 w-auto object-contain"
-                  style={{ maxWidth: "320px" }}
+                  style={{
+                    maxWidth: "320px",
+                    display: "block",
+                    margin: "0 auto",
+                  }}
                 />
               </div>
             </div>
