@@ -78,11 +78,10 @@ export default function SplashScreen() {
               }}
             >
               <img
-                src="/assets/generated/vedansh-logo-wide.dim_480x160.png"
+                src="/assets/c7ffc892c_logo.png"
                 alt="Vedansh Logo"
-                className="h-20 w-auto object-contain"
+                className="h-40 w-40 object-cover rounded-xl"
                 style={{
-                  maxWidth: "300px",
                   display: "block",
                   margin: "0 auto",
                 }}

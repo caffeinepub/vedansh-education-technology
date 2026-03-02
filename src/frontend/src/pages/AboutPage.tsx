@@ -68,7 +68,7 @@ export default function AboutPage() {
           <div className="flex justify-center mb-2">
             <div className="rounded-2xl border border-border shadow-md bg-white px-5 py-3 flex items-center justify-center">
               <img
-                src="/assets/generated/vedansh-logo-wide.dim_480x160.png"
+                src="/assets/c7ffc892c_logo.png"
                 alt="Vedansh Education & Technology"
                 className="h-16 w-auto object-contain"
                 style={{ maxWidth: "300px" }}

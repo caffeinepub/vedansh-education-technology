@@ -15,7 +15,7 @@ export default function Footer() {
             <div className="flex items-center gap-2">
               <div className="rounded-lg border border-border bg-white px-3 py-1 flex items-center justify-center">
                 <img
-                  src="/assets/generated/vedansh-logo-wide.dim_480x160.png"
+                  src="/assets/c7ffc892c_logo.png"
                   alt="Vedansh Education & Technology"
                   className="h-8 w-auto object-contain"
                   style={{ maxWidth: "200px" }}

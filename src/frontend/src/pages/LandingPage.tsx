@@ -157,7 +157,7 @@ export default function LandingPage() {
                 }}
               >
                 <img
-                  src="/assets/generated/vedansh-logo-wide.dim_480x160.png"
+                  src="/assets/c7ffc892c_logo.png"
                   alt="Vedansh Education & Technology"
                   className="h-20 w-auto object-contain"
                   style={{

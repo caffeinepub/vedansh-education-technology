@@ -34,7 +34,7 @@ export default function AuthPage() {
           <div className="flex flex-col items-center gap-3">
             <div className="rounded-xl shadow-md border border-border bg-white px-4 py-2 flex items-center justify-center">
               <img
-                src="/assets/generated/vedansh-logo-wide.dim_480x160.png"
+                src="/assets/c7ffc892c_logo.png"
                 alt="Vedansh Education & Technology"
                 className="h-14 w-auto object-contain"
                 style={{ maxWidth: "280px" }}
