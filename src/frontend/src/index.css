@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: oklch(0.99 0.002 240);
+    --foreground: oklch(0.15 0.02 240);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.15 0.02 240);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.15 0.02 240);
+    --primary: oklch(0.55 0.18 35);
+    --primary-foreground: oklch(1 0 0);
+    --secondary: oklch(0.95 0.01 240);
+    --secondary-foreground: oklch(0.25 0.02 240);
+    --muted: oklch(0.96 0.005 240);
+    --muted-foreground: oklch(0.55 0.01 240);
+    --accent: oklch(0.96 0.01 240);
+    --accent-foreground: oklch(0.25 0.02 240);
+    --destructive: oklch(0.55 0.22 25);
+    --destructive-foreground: oklch(1 0 0);
+    --border: oklch(0.9 0.005 240);
+    --input: oklch(0.9 0.005 240);
+    --ring: oklch(0.55 0.18 35);
+    --radius: 0.75rem;
+    --chart-1: oklch(0.55 0.18 35);
+    --chart-2: oklch(0.65 0.15 200);
+    --chart-3: oklch(0.7 0.12 150);
+    --chart-4: oklch(0.6 0.16 280);
+    --chart-5: oklch(0.75 0.14 80);
+
+    /* Brand colors */
+    --vedansh-navy: oklch(0.18 0.06 240);
+    --vedansh-orange: oklch(0.62 0.22 40);
+    --vedansh-gold: oklch(0.82 0.18 85);
+
+    /* Nav colors */
+    --nav-bg: oklch(0.18 0.06 240);
+    --nav-active: oklch(0.62 0.22 40);
+    --nav-inactive: oklch(0.75 0.03 240);
+  }
+
+  .dark {
+    --background: oklch(0.12 0.02 240);
+    --foreground: oklch(0.95 0.005 240);
+    --card: oklch(0.16 0.02 240);
+    --card-foreground: oklch(0.95 0.005 240);
+    --popover: oklch(0.16 0.02 240);
+    --popover-foreground: oklch(0.95 0.005 240);
+    --primary: oklch(0.65 0.2 40);
+    --primary-foreground: oklch(0.1 0.01 240);
+    --secondary: oklch(0.22 0.02 240);
+    --secondary-foreground: oklch(0.9 0.005 240);
+    --muted: oklch(0.22 0.02 240);
+    --muted-foreground: oklch(0.65 0.01 240);
+    --accent: oklch(0.22 0.02 240);
+    --accent-foreground: oklch(0.9 0.005 240);
+    --destructive: oklch(0.55 0.22 25);
+    --destructive-foreground: oklch(1 0 0);
+    --border: oklch(0.28 0.02 240);
+    --input: oklch(0.28 0.02 240);
+    --ring: oklch(0.65 0.2 40);
+    --chart-1: oklch(0.65 0.2 40);
+    --chart-2: oklch(0.65 0.15 200);
+    --chart-3: oklch(0.7 0.12 150);
+    --chart-4: oklch(0.6 0.16 280);
+    --chart-5: oklch(0.75 0.14 80);
+
+    /* Brand colors dark */
+    --vedansh-navy: oklch(0.18 0.06 240);
+    --vedansh-orange: oklch(0.68 0.22 40);
+    --vedansh-gold: oklch(0.85 0.18 85);
+
+    /* Nav colors dark */
+    --nav-bg: oklch(0.14 0.04 240);
+    --nav-active: oklch(0.68 0.22 40);
+    --nav-inactive: oklch(0.55 0.02 240);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-baloo {
+    font-family: "Baloo 2", cursive;
+  }
+
+  .text-vedansh-orange {
+    color: var(--vedansh-orange);
+  }
+
+  .text-vedansh-gold {
+    color: var(--vedansh-gold);
+  }
+
+  .text-vedansh-navy {
+    color: var(--vedansh-navy);
+  }
+
+  .bg-vedansh-orange {
+    background-color: var(--vedansh-orange);
+  }
+
+  .bg-vedansh-gold {
+    background-color: var(--vedansh-gold);
+  }
+
+  .bg-vedansh-navy {
+    background-color: var(--vedansh-navy);
+  }
+
+  .text-nav-active {
+    color: var(--nav-active);
+  }
+
+  .text-nav-inactive {
+    color: var(--nav-inactive);
+  }
+
+  .bg-nav-bg {
+    background-color: var(--nav-bg);
+  }
+
+  .bg-nav-active\/15 {
+    background-color: color-mix(in oklch, var(--nav-active) 15%, transparent);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(
+      135deg,
+      var(--vedansh-navy) 0%,
+      oklch(0.25 0.08 250) 100%
+    );
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .glass-card-dark {
+    background-color: rgba(10, 22, 40, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .shadow-glass {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  }
+
+  .btn-primary {
+    background-color: var(--vedansh-orange);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
