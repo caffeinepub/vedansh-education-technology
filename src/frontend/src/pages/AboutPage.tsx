@@ -65,6 +65,16 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary/10 via-background to-secondary/5 py-16 px-4 text-center">
         <div className="max-w-3xl mx-auto space-y-4">
+          <div className="flex justify-center mb-2">
+            <div className="rounded-2xl border border-border shadow-md bg-white px-5 py-3 flex items-center justify-center">
+              <img
+                src="/assets/generated/vedansh-logo-wide.dim_480x160.png"
+                alt="Vedansh Education & Technology"
+                className="h-16 w-auto object-contain"
+                style={{ maxWidth: "300px" }}
+              />
+            </div>
+          </div>
           <div className="flex justify-center">
             <GovtApprovedBadge size="lg" />
           </div>
@@ -124,11 +134,13 @@ export default function AboutPage() {
             Meet the Founder
           </h2>
           <div className="flex flex-col items-center gap-4">
-            <img
-              src="/assets/generated/founder-avatar.dim_256x256.png"
-              alt="Mrityunjay Pandey"
-              className="h-24 w-24 rounded-full border-4 border-primary/20 shadow-lg"
-            />
+            <div className="h-28 w-28 rounded-full border-4 border-primary/20 shadow-lg overflow-hidden bg-muted">
+              <img
+                src="/assets/generated/founder-mrityunjay.dim_400x400.png"
+                alt="Mrityunjay Pandey"
+                className="h-full w-full object-cover object-top"
+              />
+            </div>
             <div>
               <h3 className="text-xl font-bold text-foreground">
                 Mrityunjay Pandey

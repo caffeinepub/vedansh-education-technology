@@ -32,11 +32,14 @@ export default function AuthPage() {
         <div className="bg-card border border-border rounded-2xl shadow-xl p-8 space-y-6">
           {/* Logo */}
           <div className="flex flex-col items-center gap-3">
-            <img
-              src="/assets/generated/vedansh-logo.dim_256x256.png"
-              alt="Vedansh"
-              className="h-16 w-16 rounded-xl shadow-md object-contain"
-            />
+            <div className="rounded-xl shadow-md border border-border bg-white px-4 py-2 flex items-center justify-center">
+              <img
+                src="/assets/generated/vedansh-logo-wide.dim_480x160.png"
+                alt="Vedansh Education & Technology"
+                className="h-14 w-auto object-contain"
+                style={{ maxWidth: "280px" }}
+              />
+            </div>
             <div className="text-center">
               <h1 className="text-2xl font-bold text-foreground">
                 Welcome Back

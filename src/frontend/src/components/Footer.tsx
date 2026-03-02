@@ -13,12 +13,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <img
-                src="/assets/generated/vedansh-logo.dim_256x256.png"
-                alt="Vedansh"
-                className="h-8 w-8 rounded-lg object-contain"
-              />
-              <span className="font-bold text-lg text-primary">Vedansh</span>
+              <div className="rounded-lg border border-border bg-white px-3 py-1 flex items-center justify-center">
+                <img
+                  src="/assets/generated/vedansh-logo-wide.dim_480x160.png"
+                  alt="Vedansh Education & Technology"
+                  className="h-8 w-auto object-contain"
+                  style={{ maxWidth: "200px" }}
+                />
+              </div>
             </div>
             <p className="text-sm text-muted-foreground">
               Free education for every Indian student. Empowering futures

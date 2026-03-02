@@ -57,9 +57,9 @@ export default {
         success: 'var(--success)',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['"Baloo 2"', 'cursive', 'system-ui'],
-        baloo: ['"Baloo 2"', 'cursive', 'system-ui'],
+        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        display: ['Georgia', 'Cambria', '"Times New Roman"', 'serif'],
+        baloo: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',

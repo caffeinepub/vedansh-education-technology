@@ -59,30 +59,16 @@ export default function Header() {
             className="flex items-center gap-2.5 min-w-0"
             data-ocid="header.link"
           >
-            <div className="relative flex-shrink-0">
+            <div
+              className="relative flex-shrink-0 h-10 rounded-lg border border-border bg-white shadow-sm px-2 py-1 flex items-center justify-center overflow-hidden"
+              style={{ width: "auto", minWidth: "140px" }}
+            >
               <img
-                src="/assets/generated/vedansh-logo.dim_256x256.png"
-                alt="Vedansh"
-                className="h-10 w-10 rounded-lg object-contain shadow-sm"
+                src="/assets/generated/vedansh-logo-wide.dim_480x160.png"
+                alt="Vedansh Education & Technology"
+                className="h-8 w-auto object-contain"
+                style={{ maxWidth: "180px" }}
               />
-            </div>
-            <div className="flex flex-col min-w-0">
-              <span
-                className="font-bold text-lg leading-tight"
-                style={{
-                  color: "var(--vedansh-orange)",
-                  fontFamily: '"Baloo 2", cursive, system-ui',
-                }}
-              >
-                Vedansh
-              </span>
-              {/* Desktop tagline */}
-              <span
-                className="hidden lg:block text-xs font-medium leading-none truncate"
-                style={{ color: "var(--muted-foreground)" }}
-              >
-                नहीं आता है सिखों
-              </span>
             </div>
           </Link>
 

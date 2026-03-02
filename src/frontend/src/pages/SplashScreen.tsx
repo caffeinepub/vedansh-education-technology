@@ -70,13 +70,14 @@ export default function SplashScreen() {
               style={{ background: "oklch(0.62 0.22 40 / 0.5)" }}
             />
             <div
-              className="relative rounded-2xl shadow-2xl p-3 backdrop-blur-sm"
-              style={{ background: "rgba(255,255,255,0.15)" }}
+              className="relative rounded-2xl shadow-2xl px-4 py-3 overflow-hidden"
+              style={{ background: "rgba(255,255,255,0.97)" }}
             >
               <img
-                src="/assets/generated/vedansh-logo.dim_256x256.png"
+                src="/assets/generated/vedansh-logo-wide.dim_480x160.png"
                 alt="Vedansh Logo"
-                className="h-24 w-24 object-contain"
+                className="h-20 w-auto object-contain"
+                style={{ maxWidth: "300px" }}
               />
             </div>
           </div>
@@ -94,10 +95,7 @@ export default function SplashScreen() {
             transitionDelay: "100ms",
           }}
         >
-          <h1
-            className="text-4xl font-bold text-white tracking-tight"
-            style={{ fontFamily: '"Baloo 2", cursive, system-ui' }}
-          >
+          <h1 className="text-4xl font-bold text-white tracking-tight">
             Vedansh
           </h1>
           <p

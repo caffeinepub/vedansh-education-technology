@@ -149,13 +149,14 @@ export default function LandingPage() {
                 style={{ background: "oklch(0.62 0.22 40 / 0.6)" }}
               />
               <div
-                className="relative rounded-2xl shadow-2xl p-2"
-                style={{ background: "rgba(255,255,255,0.12)" }}
+                className="relative rounded-2xl shadow-2xl px-5 py-3 overflow-hidden"
+                style={{ background: "rgba(255,255,255,0.97)" }}
               >
                 <img
-                  src="/assets/generated/vedansh-logo.dim_256x256.png"
+                  src="/assets/generated/vedansh-logo-wide.dim_480x160.png"
                   alt="Vedansh Education & Technology"
-                  className="h-20 w-20 object-contain"
+                  className="h-20 w-auto object-contain"
+                  style={{ maxWidth: "320px" }}
                 />
               </div>
             </div>
@@ -178,10 +179,7 @@ export default function LandingPage() {
 
           {/* Main heading */}
           <div className="space-y-2">
-            <h1
-              className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight"
-              style={{ fontFamily: '"Baloo 2", cursive, system-ui' }}
-            >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
               India's Free{" "}
               <span style={{ color: "oklch(0.62 0.22 40)" }}>Education</span>
               <br className="hidden sm:block" /> Platform
@@ -299,10 +297,7 @@ export default function LandingPage() {
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2
-              className="text-3xl font-bold text-foreground mb-3"
-              style={{ fontFamily: '"Baloo 2", cursive, system-ui' }}
-            >
+            <h2 className="text-3xl font-bold text-foreground mb-3">
               Everything You Need to Succeed
             </h2>
             <p className="text-muted-foreground">
@@ -335,10 +330,7 @@ export default function LandingPage() {
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2
-              className="text-3xl font-bold text-foreground mb-3"
-              style={{ fontFamily: '"Baloo 2", cursive, system-ui' }}
-            >
+            <h2 className="text-3xl font-bold text-foreground mb-3">
               What Students Say
             </h2>
           </div>
@@ -392,10 +384,7 @@ export default function LandingPage() {
           }}
         />
         <div className="max-w-2xl mx-auto space-y-6 relative z-10">
-          <h2
-            className="text-3xl font-bold text-white"
-            style={{ fontFamily: '"Baloo 2", cursive, system-ui' }}
-          >
+          <h2 className="text-3xl font-bold text-white">
             Start Your Free Learning Journey Today
           </h2>
           <p style={{ color: "rgba(255,255,255,0.7)" }}>
