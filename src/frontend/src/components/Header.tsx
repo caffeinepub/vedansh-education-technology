@@ -63,7 +63,7 @@ export default function Header() {
               <img
                 src="/assets/generated/vedansh-logo.dim_256x256.png"
                 alt="Vedansh"
-                className="h-9 w-9 rounded-xl object-cover shadow-sm"
+                className="h-10 w-10 rounded-lg object-contain shadow-sm"
               />
             </div>
             <div className="flex flex-col min-w-0">

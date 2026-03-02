@@ -16,7 +16,7 @@ export default function Footer() {
               <img
                 src="/assets/generated/vedansh-logo.dim_256x256.png"
                 alt="Vedansh"
-                className="h-8 w-8 rounded-lg"
+                className="h-8 w-8 rounded-lg object-contain"
               />
               <span className="font-bold text-lg text-primary">Vedansh</span>
             </div>

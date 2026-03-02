@@ -69,11 +69,16 @@ export default function SplashScreen() {
               className="absolute inset-0 rounded-2xl blur-xl opacity-60"
               style={{ background: "oklch(0.62 0.22 40 / 0.5)" }}
             />
-            <img
-              src="/assets/generated/vedansh-logo.dim_256x256.png"
-              alt="Vedansh Logo"
-              className="relative h-24 w-24 rounded-2xl shadow-2xl object-cover"
-            />
+            <div
+              className="relative rounded-2xl shadow-2xl p-3 backdrop-blur-sm"
+              style={{ background: "rgba(255,255,255,0.15)" }}
+            >
+              <img
+                src="/assets/generated/vedansh-logo.dim_256x256.png"
+                alt="Vedansh Logo"
+                className="h-24 w-24 object-contain"
+              />
+            </div>
           </div>
         </div>
 

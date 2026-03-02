@@ -35,7 +35,7 @@ export default function AuthPage() {
             <img
               src="/assets/generated/vedansh-logo.dim_256x256.png"
               alt="Vedansh"
-              className="h-16 w-16 rounded-xl shadow-md"
+              className="h-16 w-16 rounded-xl shadow-md object-contain"
             />
             <div className="text-center">
               <h1 className="text-2xl font-bold text-foreground">

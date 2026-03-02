@@ -148,11 +148,16 @@ export default function LandingPage() {
                 className="absolute inset-0 rounded-2xl blur-xl opacity-50"
                 style={{ background: "oklch(0.62 0.22 40 / 0.6)" }}
               />
-              <img
-                src="/assets/generated/vedansh-logo.dim_256x256.png"
-                alt="Vedansh Education & Technology"
-                className="relative h-20 w-20 rounded-2xl shadow-2xl object-cover"
-              />
+              <div
+                className="relative rounded-2xl shadow-2xl p-2"
+                style={{ background: "rgba(255,255,255,0.12)" }}
+              >
+                <img
+                  src="/assets/generated/vedansh-logo.dim_256x256.png"
+                  alt="Vedansh Education & Technology"
+                  className="h-20 w-20 object-contain"
+                />
+              </div>
             </div>
           </div>
 
