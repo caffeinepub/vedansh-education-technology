@@ -1,6 +1,5 @@
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogHeader,
   DialogTitle,
@@ -15,16 +14,13 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   BookOpen,
-  ChevronRight,
   Download,
   ExternalLink,
   FileText,
   Play,
   Video,
-  X,
 } from "lucide-react";
 import { useState } from "react";
-import { toast } from "sonner";
 import GovtApprovedBadge from "../components/GovtApprovedBadge";
 
 const classes = [
@@ -614,6 +610,7 @@ export default function AcademicSection() {
     open: boolean;
     subject: string;
   }>({ open: false, subject: "" });
+  const [activeTab, setActiveTab] = useState("ncert");
   const subjects = getSubjectsForClass(selectedClass);
 
   const openVideo = (subject: string) => {
@@ -680,30 +677,51 @@ export default function AcademicSection() {
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {subjects.map((subject) => (
-              <button
-                type="button"
+              <div
                 key={subject.name}
-                className="bg-card border border-border rounded-2xl p-4 hover:shadow-glass transition-all duration-200 hover:-translate-y-0.5 cursor-pointer active:scale-95 text-left w-full"
-                onClick={() => toast.info(`${subject.name} selected`)}
+                className="bg-card border border-border rounded-2xl p-4 hover:shadow-glass transition-all duration-200 hover:-translate-y-0.5 cursor-pointer active:scale-95"
               >
                 <div
                   className={`w-10 h-10 rounded-xl bg-gradient-to-br ${subject.color} flex items-center justify-center mb-3 text-xl`}
                 >
                   {subject.icon}
                 </div>
-                <div className="font-medium text-foreground text-sm">
+                <div className="font-medium text-foreground text-sm mb-2">
                   {subject.name}
                 </div>
-                <div className="text-foreground/50 text-xs mt-0.5">
+                <div className="text-foreground/50 text-xs mb-3">
                   {selectedClass}
                 </div>
-              </button>
+                <div className="flex flex-col gap-1.5">
+                  <button
+                    type="button"
+                    onClick={() => handleReadOnline(subject.name)}
+                    className="w-full flex items-center justify-center gap-1 bg-vedansh-orange/10 text-vedansh-orange text-xs font-medium py-1.5 rounded-lg hover:bg-vedansh-orange/20 transition-colors"
+                  >
+                    <ExternalLink className="w-3 h-3" /> Read Online
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleDownloadPdf(subject.name)}
+                    className="w-full flex items-center justify-center gap-1 bg-blue-500/10 text-blue-500 text-xs font-medium py-1.5 rounded-lg hover:bg-blue-500/20 transition-colors"
+                  >
+                    <Download className="w-3 h-3" /> Download PDF
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => openVideo(subject.name)}
+                    className="w-full flex items-center justify-center gap-1 bg-red-500/10 text-red-500 text-xs font-medium py-1.5 rounded-lg hover:bg-red-500/20 transition-colors"
+                  >
+                    <Video className="w-3 h-3" /> Watch Lecture
+                  </button>
+                </div>
+              </div>
             ))}
           </div>
         </div>
 
         {/* Resources Tabs */}
-        <Tabs defaultValue="ncert">
+        <Tabs value={activeTab} onValueChange={setActiveTab}>
           <TabsList className="w-full grid grid-cols-4">
             <TabsTrigger value="ncert">NCERT</TabsTrigger>
             <TabsTrigger value="material">Material</TabsTrigger>

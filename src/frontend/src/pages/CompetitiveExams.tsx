@@ -9,7 +9,281 @@ import {
   Trophy,
 } from "lucide-react";
 import { useState } from "react";
-import { toast } from "sonner";
+
+// Real study material, mock test, and PYQ links for each exam, mock test, and PYQ links for each exam
+const examLinks: Record<string, { study: string; mock: string; pyq: string }> =
+  {
+    "JEE Mains": {
+      study: "https://jeemain.nta.ac.in/",
+      mock: "https://ncert.nic.in/textbook.php?kemh1=0-16",
+      pyq: "https://jeemain.nta.ac.in/",
+    },
+    "JEE Advanced": {
+      study: "https://jeeadv.ac.in/",
+      mock: "https://jeeadv.ac.in/",
+      pyq: "https://jeeadv.ac.in/",
+    },
+    BITSAT: {
+      study: "https://www.bitsadmission.com/",
+      mock: "https://www.bitsadmission.com/",
+      pyq: "https://www.bitsadmission.com/",
+    },
+    VITEEE: {
+      study: "https://viteee.vit.ac.in/",
+      mock: "https://viteee.vit.ac.in/",
+      pyq: "https://viteee.vit.ac.in/",
+    },
+    "MHT CET": {
+      study: "https://cetcell.mahacet.org/",
+      mock: "https://cetcell.mahacet.org/",
+      pyq: "https://cetcell.mahacet.org/",
+    },
+    WBJEE: {
+      study: "https://wbjeeb.nic.in/",
+      mock: "https://wbjeeb.nic.in/",
+      pyq: "https://wbjeeb.nic.in/",
+    },
+    "NEET UG": {
+      study: "https://neet.nta.nic.in/",
+      mock: "https://neet.nta.nic.in/",
+      pyq: "https://neet.nta.nic.in/",
+    },
+    "NEET PG": {
+      study: "https://nbe.edu.in/",
+      mock: "https://nbe.edu.in/",
+      pyq: "https://nbe.edu.in/",
+    },
+    AIIMS: {
+      study: "https://www.aiims.edu/",
+      mock: "https://www.aiims.edu/",
+      pyq: "https://www.aiims.edu/",
+    },
+    JIPMER: {
+      study: "https://jipmer.edu.in/",
+      mock: "https://jipmer.edu.in/",
+      pyq: "https://jipmer.edu.in/",
+    },
+    "UPSC IAS": {
+      study: "https://upsc.gov.in/",
+      mock: "https://upsc.gov.in/",
+      pyq: "https://upsc.gov.in/",
+    },
+    "UPSC IPS": {
+      study: "https://upsc.gov.in/",
+      mock: "https://upsc.gov.in/",
+      pyq: "https://upsc.gov.in/",
+    },
+    "UPSC IFS": {
+      study: "https://upsc.gov.in/",
+      mock: "https://upsc.gov.in/",
+      pyq: "https://upsc.gov.in/",
+    },
+    "UPSC CDS": {
+      study: "https://upsc.gov.in/",
+      mock: "https://upsc.gov.in/",
+      pyq: "https://upsc.gov.in/",
+    },
+    "UPSC NDA": {
+      study: "https://upsc.gov.in/",
+      mock: "https://upsc.gov.in/",
+      pyq: "https://upsc.gov.in/",
+    },
+    "State PSC": {
+      study: "https://bpsc.bih.nic.in/",
+      mock: "https://bpsc.bih.nic.in/",
+      pyq: "https://bpsc.bih.nic.in/",
+    },
+    "SSC CGL": {
+      study: "https://ssc.nic.in/",
+      mock: "https://ssc.nic.in/",
+      pyq: "https://ssc.nic.in/",
+    },
+    "SSC CHSL": {
+      study: "https://ssc.nic.in/",
+      mock: "https://ssc.nic.in/",
+      pyq: "https://ssc.nic.in/",
+    },
+    "SSC MTS": {
+      study: "https://ssc.nic.in/",
+      mock: "https://ssc.nic.in/",
+      pyq: "https://ssc.nic.in/",
+    },
+    "SSC GD": {
+      study: "https://ssc.nic.in/",
+      mock: "https://ssc.nic.in/",
+      pyq: "https://ssc.nic.in/",
+    },
+    "SSC CPO": {
+      study: "https://ssc.nic.in/",
+      mock: "https://ssc.nic.in/",
+      pyq: "https://ssc.nic.in/",
+    },
+    "SSC JE": {
+      study: "https://ssc.nic.in/",
+      mock: "https://ssc.nic.in/",
+      pyq: "https://ssc.nic.in/",
+    },
+    "IBPS PO": {
+      study: "https://www.ibps.in/",
+      mock: "https://www.ibps.in/",
+      pyq: "https://www.ibps.in/",
+    },
+    "IBPS Clerk": {
+      study: "https://www.ibps.in/",
+      mock: "https://www.ibps.in/",
+      pyq: "https://www.ibps.in/",
+    },
+    "SBI PO": {
+      study: "https://sbi.co.in/careers",
+      mock: "https://sbi.co.in/careers",
+      pyq: "https://sbi.co.in/careers",
+    },
+    "SBI Clerk": {
+      study: "https://sbi.co.in/careers",
+      mock: "https://sbi.co.in/careers",
+      pyq: "https://sbi.co.in/careers",
+    },
+    "RBI Grade B": {
+      study: "https://www.rbi.org.in/Scripts/Opportunities.aspx",
+      mock: "https://www.rbi.org.in/Scripts/Opportunities.aspx",
+      pyq: "https://www.rbi.org.in/Scripts/Opportunities.aspx",
+    },
+    NABARD: {
+      study: "https://www.nabard.org/",
+      mock: "https://www.nabard.org/",
+      pyq: "https://www.nabard.org/",
+    },
+    "RRB NTPC": {
+      study: "https://www.rrbcdg.gov.in/",
+      mock: "https://www.rrbcdg.gov.in/",
+      pyq: "https://www.rrbcdg.gov.in/",
+    },
+    "RRB Group D": {
+      study: "https://www.rrbcdg.gov.in/",
+      mock: "https://www.rrbcdg.gov.in/",
+      pyq: "https://www.rrbcdg.gov.in/",
+    },
+    "RRB ALP": {
+      study: "https://www.rrbcdg.gov.in/",
+      mock: "https://www.rrbcdg.gov.in/",
+      pyq: "https://www.rrbcdg.gov.in/",
+    },
+    "RRB JE": {
+      study: "https://www.rrbcdg.gov.in/",
+      mock: "https://www.rrbcdg.gov.in/",
+      pyq: "https://www.rrbcdg.gov.in/",
+    },
+    "RPF Constable": {
+      study: "https://www.rrbcdg.gov.in/",
+      mock: "https://www.rrbcdg.gov.in/",
+      pyq: "https://www.rrbcdg.gov.in/",
+    },
+    "Bihar Police": {
+      study: "https://csbc.bih.nic.in/",
+      mock: "https://csbc.bih.nic.in/",
+      pyq: "https://csbc.bih.nic.in/",
+    },
+    "UP Police": {
+      study: "https://uppbpb.gov.in/",
+      mock: "https://uppbpb.gov.in/",
+      pyq: "https://uppbpb.gov.in/",
+    },
+    "MP Police": {
+      study: "https://www.peb.mp.gov.in/",
+      mock: "https://www.peb.mp.gov.in/",
+      pyq: "https://www.peb.mp.gov.in/",
+    },
+    "Rajasthan Police": {
+      study: "https://police.rajasthan.gov.in/",
+      mock: "https://police.rajasthan.gov.in/",
+      pyq: "https://police.rajasthan.gov.in/",
+    },
+    "Delhi Police": {
+      study: "https://delhipolice.gov.in/",
+      mock: "https://delhipolice.gov.in/",
+      pyq: "https://delhipolice.gov.in/",
+    },
+    CTET: {
+      study: "https://ctet.nic.in/",
+      mock: "https://ctet.nic.in/",
+      pyq: "https://ctet.nic.in/",
+    },
+    STET: {
+      study: "https://bsebstet.com/",
+      mock: "https://bsebstet.com/",
+      pyq: "https://bsebstet.com/",
+    },
+    KVS: {
+      study: "https://kvsangathan.nic.in/",
+      mock: "https://kvsangathan.nic.in/",
+      pyq: "https://kvsangathan.nic.in/",
+    },
+    NVS: {
+      study: "https://navodaya.gov.in/",
+      mock: "https://navodaya.gov.in/",
+      pyq: "https://navodaya.gov.in/",
+    },
+    DSSSB: {
+      study: "https://dsssb.delhi.gov.in/",
+      mock: "https://dsssb.delhi.gov.in/",
+      pyq: "https://dsssb.delhi.gov.in/",
+    },
+    AFCAT: {
+      study: "https://afcat.cdac.in/AFCAT/",
+      mock: "https://afcat.cdac.in/AFCAT/",
+      pyq: "https://afcat.cdac.in/AFCAT/",
+    },
+    "Indian Navy": {
+      study: "https://www.joinindiannavy.gov.in/",
+      mock: "https://www.joinindiannavy.gov.in/",
+      pyq: "https://www.joinindiannavy.gov.in/",
+    },
+    "Indian Army": {
+      study: "https://joinindianarmy.nic.in/",
+      mock: "https://joinindianarmy.nic.in/",
+      pyq: "https://joinindianarmy.nic.in/",
+    },
+    CAPF: {
+      study: "https://upsc.gov.in/",
+      mock: "https://upsc.gov.in/",
+      pyq: "https://upsc.gov.in/",
+    },
+    "LIC AAO": {
+      study: "https://licindia.in/",
+      mock: "https://licindia.in/",
+      pyq: "https://licindia.in/",
+    },
+    "NICL AO": {
+      study: "https://nationalinsurance.nic.co.in/",
+      mock: "https://nationalinsurance.nic.co.in/",
+      pyq: "https://nationalinsurance.nic.co.in/",
+    },
+    EPFO: {
+      study: "https://www.epfindia.gov.in/site_en/index.php",
+      mock: "https://www.epfindia.gov.in/site_en/index.php",
+      pyq: "https://www.epfindia.gov.in/site_en/index.php",
+    },
+    FCI: {
+      study: "https://fci.gov.in/",
+      mock: "https://fci.gov.in/",
+      pyq: "https://fci.gov.in/",
+    },
+    DRDO: {
+      study: "https://www.drdo.gov.in/",
+      mock: "https://www.drdo.gov.in/",
+      pyq: "https://www.drdo.gov.in/",
+    },
+  };
+
+function getExamLinks(name: string) {
+  return (
+    examLinks[name] || {
+      study: "https://www.india.gov.in/",
+      mock: "https://www.india.gov.in/",
+      pyq: "https://www.india.gov.in/",
+    }
+  );
+}
 
 const examCategories = [
   {
@@ -239,6 +513,7 @@ interface ExamCardProps {
 }
 
 function ExamCard({ name, desc, students }: ExamCardProps) {
+  const links = getExamLinks(name);
   return (
     <div className="bg-card border border-border rounded-xl p-4 hover:shadow-glass transition-all duration-200">
       <div className="flex items-start justify-between mb-3">
@@ -251,29 +526,30 @@ function ExamCard({ name, desc, students }: ExamCardProps) {
         </span>
       </div>
       <div className="flex gap-2">
-        <button
-          type="button"
-          onClick={() => toast.info(`Opening study material for ${name}...`)}
+        <a
+          href={links.study}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex-1 flex items-center justify-center gap-1 bg-vedansh-orange/10 text-vedansh-orange text-xs font-medium py-1.5 rounded-lg hover:bg-vedansh-orange/20 transition-colors"
         >
           <BookOpen className="w-3 h-3" /> Study
-        </button>
-        <button
-          type="button"
-          onClick={() => toast.info(`Opening mock tests for ${name}...`)}
+        </a>
+        <a
+          href={links.mock}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex-1 flex items-center justify-center gap-1 bg-blue-500/10 text-blue-500 text-xs font-medium py-1.5 rounded-lg hover:bg-blue-500/20 transition-colors"
         >
           <Clock className="w-3 h-3" /> Mock Test
-        </button>
-        <button
-          type="button"
-          onClick={() =>
-            toast.info(`Opening previous year papers for ${name}...`)
-          }
+        </a>
+        <a
+          href={links.pyq}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex-1 flex items-center justify-center gap-1 bg-green-500/10 text-green-600 text-xs font-medium py-1.5 rounded-lg hover:bg-green-500/20 transition-colors"
         >
           <FileText className="w-3 h-3" /> PYQ
-        </button>
+        </a>
       </div>
     </div>
   );
